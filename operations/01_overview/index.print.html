@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="プログラム概要 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/01_overview/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="プログラム概要 - RESP-MX マニュアル">
+    <meta property="og:description" content="RESP-MXとは 質点系振動解析プログラムは立体モデルによる振動解析が現実的な速度で解けるようになってきた現在においても、立体振動解析と比較して圧倒的に計算コストが低く、モデルもシンプルでパラメトリックスタディに優れることから今後も一定数使われていくと思われます。 パラメトリックスタディで重視すべきは「モデルを手早く作ってすぐに計算結果を見る」というところです。そのため、ただ入力を表計算形式にしただけではなく、
+複数のモデルを単一ファイルで管理 多機能な結果表示ビューワーと応答まとめ データ入力を簡単に行う入力補助機能 などを取り入れ実務者の視点で使いやすいプログラムに仕上げました。 以降ではRESP-MXならではの主な機能についてご紹介します。
+パラメトリックスタディに特化したインターフェース パラメトリックスタディを行う際、設計・解析のため幾つもの種類のモデルを作成していくと思いますが、モデルには共通部分とそうでない部分があります。 例えば免震層の設計時には様々な組み合わせを試しますが、上部建物は変更することはありません。 逆に上部に変更があり微修正をかける際には免震層は全く変更がない場合があります。
+また免震装置のばらつきを考慮した検討をする際には、装置の特性変動以外は変更しません。
+これらの変更をする時、各方向やばらつき毎にファイルが分かれていると修正漏れが生じるリスクがあります。そうでなくとも同じ修正を各ファイルに行うのは時間の無駄です。
+これを解決するためにパネルと呼ばれる要素単位を1つのモデルで幾つも定義し、それらを自由に組み合わせることでモデルを作成するという方法を採用しています。
+計算セットと解析ケース ひとつのMXファイルの中には複数のパネル組み合わせモデルを同時に定義することができます。 このモデル単位を「計算セット」と呼びます。（M2でのm2cファイル単位） 計算セットの中にはモデルに対してどのような波形を入力するのかを複数定義することができ、これを「解析ケース」と呼びます。（M2でのRESPコマンド単位）
+様々な入力補助機能 入力で時間がかかる理由の1つにマニュアルを見ながら多種多様なパラメータを入力していくという点が挙げられます。RESP-MXでは原則マニュアルを見ることなくパラメータを打ち込めるような配慮が各所に組み込まれています。
+また、免震装置等はプリセットで各メーカーのデータが入っていますので型番を選ぶだけで入力できます。
+大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行 例えば免振構造で評定に出す場合、 方向（X、Y、45、135）×ばらつき（標準、＋、－）×地震波（7波以上）にレベル1とレベル2、余裕度検討と100ケースを超える解析を行う必要があります。 しかも設計を完了するまでに何度も設計変更やパラメトリックスタディで再解析を行う必要があり、実際に設計時に実行する解析数はこの数倍にもなります。 これらを効率的に処理できるようにケース単位で実行する、しないを制御しつつ、マルチスレッド環境で無駄なく解析を行うことができます。
+RESP-M/Ⅱでプログラムの制約上出来なかった解析が可能に プログラムが新しくなったことで、既存の質点系振動解析プログラムのRESP-M/Ⅱでは今まで仕様上できなかった解析に対応しています。
+マルチタワーの正式な対応 建物のせん断成分だけに効くダンパー 等価曲げせん断型の中間層免震の対応 等々（随時追加予定） 複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ パラメトリックスタディを行っている時には前の結果との比較を簡単に行いたくなります。 RESP-MXのビューワーでは各モデルの応答を重ね合わせて表示することが簡単にできます。また、一度登録した組み合わせは保存しておき、いつでも再表示することが可能です。
+また、履歴ビューワーはスライダーバーを使って任意の時刻までを表示できるので、ある部材がどのような履歴を描いたのかをアニメーションのように見ることができます。
+他にも概要書に載せる項目だけを抽出した最大応答値一覧など、より実務向けに特化した機能もあります。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>プログラム概要 - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/01_overview/index.html" rel="canonical" type="text/html" title="プログラム概要 - RESP-MX マニュアル">
+    <link href="../../operations/01_overview/index.xml" rel="alternate" type="application/rss+xml" title="プログラム概要 - RESP-MX マニュアル">
+    <link href="../../images/favicon.ico?1715128926" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1715128926" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1715128926" rel="stylesheet">
+    <link href="../../css/fonts.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1715128926" rel="stylesheet">
+    <link href="../../css/theme-auto.css?1715128926" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-auto.css?1715128926" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/variant.css?1715128926" rel="stylesheet">
+    <link href="../../css/print.css?1715128926" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1715128926" rel="stylesheet">
+    <link href="../../css/ie.css?1715128926" rel="stylesheet">
+    <script src="../../js/url.js?1715128926"></script>
+    <script src="../../js/variant.js?1715128926"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../operations/01_overview/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">プログラム概要</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/index.html" title="操作編 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/02_analysis_flow/index.html" title="解析実行の流れ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="プログラム概要">プログラム概要</h1>
+
+<h2 id="resp-mxとは">RESP-MXとは</h2>
+<p>質点系振動解析プログラムは立体モデルによる振動解析が現実的な速度で解けるようになってきた現在においても、立体振動解析と比較して圧倒的に計算コストが低く、モデルもシンプルでパラメトリックスタディに優れることから今後も一定数使われていくと思われます。
+パラメトリックスタディで重視すべきは「モデルを手早く作ってすぐに計算結果を見る」というところです。そのため、ただ入力を表計算形式にしただけではなく、</p>
+<ul>
+<li>複数のモデルを単一ファイルで管理</li>
+<li>多機能な結果表示ビューワーと応答まとめ</li>
+<li>データ入力を簡単に行う入力補助機能
+などを取り入れ実務者の視点で使いやすいプログラムに仕上げました。</li>
+</ul>
+<p>以降ではRESP-MXならではの主な機能についてご紹介します。</p>
+<p><a href="#R-image-f3fc76c7a173be97deb5973a3611511f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_1.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f3fc76c7a173be97deb5973a3611511f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_1.drawio.png"></a></p>
+<h2 id="パラメトリックスタディに特化したインターフェース">パラメトリックスタディに特化したインターフェース</h2>
+<p>パラメトリックスタディを行う際、設計・解析のため幾つもの種類のモデルを作成していくと思いますが、モデルには共通部分とそうでない部分があります。
+例えば免震層の設計時には様々な組み合わせを試しますが、上部建物は変更することはありません。
+逆に上部に変更があり微修正をかける際には免震層は全く変更がない場合があります。</p>
+<p>また免震装置のばらつきを考慮した検討をする際には、装置の特性変動以外は変更しません。</p>
+<p>これらの変更をする時、各方向やばらつき毎にファイルが分かれていると修正漏れが生じるリスクがあります。そうでなくとも同じ修正を各ファイルに行うのは時間の無駄です。</p>
+<p><a href="#R-image-1595508048e1377310eb497a75931008" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_2.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1595508048e1377310eb497a75931008"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_2.drawio.png"></a></p>
+<p>これを解決するためにパネルと呼ばれる要素単位を1つのモデルで幾つも定義し、それらを自由に組み合わせることでモデルを作成するという方法を採用しています。</p>
+<h2 id="計算セットと解析ケース">計算セットと解析ケース</h2>
+<p>ひとつのMXファイルの中には複数のパネル組み合わせモデルを同時に定義することができます。
+このモデル単位を「計算セット」と呼びます。（M2でのm2cファイル単位）
+　計算セットの中にはモデルに対してどのような波形を入力するのかを複数定義することができ、これを「解析ケース」と呼びます。（M2でのRESPコマンド単位）</p>
+<p><a href="#R-image-f200355d1cdf10f08b384fb0880d5dce" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f200355d1cdf10f08b384fb0880d5dce"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image8.png"></a></p>
+<p><a href="#R-image-c0996686e5795e906ae5daaa9e9a4220" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_5.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c0996686e5795e906ae5daaa9e9a4220"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_5.drawio.png"></a></p>
+<h2 id="様々な入力補助機能">様々な入力補助機能</h2>
+<p>　入力で時間がかかる理由の1つにマニュアルを見ながら多種多様なパラメータを入力していくという点が挙げられます。RESP-MXでは原則マニュアルを見ることなくパラメータを打ち込めるような配慮が各所に組み込まれています。</p>
+<p><a href="#R-image-2dd371f1c528e66f14d849ffb6d6bd54" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_6.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2dd371f1c528e66f14d849ffb6d6bd54"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_6.drawio.png"></a></p>
+<p>　また、免震装置等はプリセットで各メーカーのデータが入っていますので型番を選ぶだけで入力できます。</p>
+<p><a href="#R-image-d27bf28ad7e940e527daa14b5815707b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_7.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d27bf28ad7e940e527daa14b5815707b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_7.drawio.png"></a></p>
+<h2 id="大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行">大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行</h2>
+<p>　例えば免振構造で評定に出す場合、
+方向（X、Y、45、135）×ばらつき（標準、＋、－）×地震波（7波以上）にレベル1とレベル2、余裕度検討と100ケースを超える解析を行う必要があります。
+　しかも設計を完了するまでに何度も設計変更やパラメトリックスタディで再解析を行う必要があり、実際に設計時に実行する解析数はこの数倍にもなります。
+　これらを効率的に処理できるようにケース単位で実行する、しないを制御しつつ、マルチスレッド環境で無駄なく解析を行うことができます。</p>
+<p><a href="#R-image-eeca30622bb5b66cfdf1bf81917c613d" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image25.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eeca30622bb5b66cfdf1bf81917c613d"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image25.png"></a></p>
+<h2 id="resp-mでプログラムの制約上出来なかった解析が可能に">RESP-M/Ⅱでプログラムの制約上出来なかった解析が可能に</h2>
+<p>　プログラムが新しくなったことで、既存の質点系振動解析プログラムのRESP-M/Ⅱでは今まで仕様上できなかった解析に対応しています。</p>
+<ul>
+<li>マルチタワーの正式な対応</li>
+<li>建物のせん断成分だけに効くダンパー</li>
+<li>等価曲げせん断型の中間層免震の対応
+等々（随時追加予定）</li>
+</ul>
+<h2 id="複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ">複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ</h2>
+<p>　パラメトリックスタディを行っている時には前の結果との比較を簡単に行いたくなります。
+RESP-MXのビューワーでは各モデルの応答を重ね合わせて表示することが簡単にできます。また、一度登録した組み合わせは保存しておき、いつでも再表示することが可能です。</p>
+<p>また、履歴ビューワーはスライダーバーを使って任意の時刻までを表示できるので、ある部材がどのような履歴を描いたのかをアニメーションのように見ることができます。</p>
+<p>他にも概要書に載せる項目だけを抽出した最大応答値一覧など、より実務向けに特化した機能もあります。</p>
+<p><a href="#R-image-34ad8ebf1ae4693787cc4009595575f4" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/01_overview/./image1_1_8.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34ad8ebf1ae4693787cc4009595575f4"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/01_overview/./image1_1_8.drawio.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1715128926" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1715128926" defer></script>
+    <script src="../../js/theme.js?1715128926" defer></script>
+  </body>
+</html>

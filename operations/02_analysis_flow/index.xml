@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>解析実行の流れ on RESP-MX マニュアル</title>
+    <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/index.html</link>
+    <description>Recent content in 解析実行の流れ on RESP-MX マニュアル</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 17 Apr 2024 08:14:34 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/resp-docs/operations/02_analysis_flow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スタートアップ</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/01_startapp/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:07:05 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/01_startapp/index.html</guid>
+      <description>RESP-MXを起動するとスタートアップというウィンドウが表示されます。新規作成ボタンをクリックすると新規プロジェクト作成ダイアログが開きます。「プロジェクトファイルを開く」では作成したデータを選択することができます。 RESP-M2のデータ（.m2cファイル）をインポートすることもできます。</description>
+    </item>
+    <item>
+      <title>新規プロジェクト</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/02_newproject/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:09:51 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/02_newproject/index.html</guid>
+      <description>まずは新規プロジェクトを生成します。新規プロジェクトを立ち上げると新規計算セット作成ダイアログが開き、計算セットの設定を行います。&#xA;単位：重量・長さの単位系を設定します。 計算セット名：作成される計算セットの名前を設定します。 階数：モデルの階数を指定します。指定された階数は各パネルへ設定されます。 免震階：免震モデル時の免震階を設定します。 サンプル：入力時の参考に仮の値が設定されます。 モデルタイプ：各モデルに必要な最低限のパネルの組み合わせが設定されます。 作成パネル：新規で作成するパネルを選択します。 標準波形設定：標準波形が設定されます。 単位系はパネルツリーの共通設定にて後から変更できます。</description>
+    </item>
+    <item>
+      <title>新規パネルの作成</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/03_panel/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:10:30 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/03_panel/index.html</guid>
+      <description>パネルツリーを右クリックまたは親ノードダブルクリックで新規パネルが作成されます。表示されたダイアログでパネル定義を入力します。</description>
+    </item>
+    <item>
+      <title>パネル配置</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/04_panel_setting/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:11:37 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/04_panel_setting/index.html</guid>
+      <description>計算セットはパネルの組み合わせで定義されます。パネルを配置するには、画面左のパネルツリーにあるパネルを配置したい計算セットにドラッグ＆ドロップします。&#xA;また計算セットの配置したいパネルの右上のOFF状態をクリックしてON状態にすることでもパネルが配置されます。&#xA;パネルの配置解除 パネル配置を解除するには、計算セットのパネルをマウスで選択しDeleteキーを押します。 消えるのはあくまで当該計算セットへの登録情報のみでパネルの定義そのものは消えません。 パネルの右上のON状態をクリックしてOFF状態にすることでもパネルが配置が解除されます。&#xA;パネル定義の削除 パネルの定義を削除するにはパネルツリーの該当パネル上で右クリックから「パネル削除」を選択してください。</description>
+    </item>
+    <item>
+      <title>パネル編集</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/05_panel_edit/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:11:59 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/05_panel_edit/index.html</guid>
+      <description>パネル定義を確認・編集する場合はメイン画面のパネル、もしくはパネルツリー内の該当パネル名をダブルクリック、または鉛筆マークをクリックします。</description>
+    </item>
+    <item>
+      <title>計算セットの追加</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/06_calcset/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:12:23 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/06_calcset/index.html</guid>
+      <description>メイン画面を右クリックしてコンテキストメニューを出し、「計算セットの追加」をクリックします。 新規計算セット追加ダイアログが出るので計算セットの設定を行います。 詳細はプロジェクト作成章を参照&#xA;新しい計算セットが生成されます（選択されたセットの状態をコピーして生成することもできます）</description>
+    </item>
+    <item>
+      <title>解析実行</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/07_analysis/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:12:39 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/07_analysis/index.html</guid>
+      <description>解析準備 計算実行ボタンをクリックするとプロジェクトの保存の後、計算実行ダイアログが表示されます。 計算を実行するには以下の条件を満たしている必要があります。&#xA;次の4つのパネルが配置されている（階重量・復元力特性・解析条件・解析ケース） 配置されている階重量・復元力特性パネルの最大階数が一致 解析ケースが1つ以上設定されている 解析ケース名が一意につけられている 計算実行前のプロジェクトの保存は必須となっています。保存済みまたはファイルを開くで読み込まれたプロジェクトは、計算実行ボタンクリック時に自動で上書き保存されます。&#xA;プロジェクトファイルの保存が完了するとftcファイルが1ケース毎に1ファイル作成されます。作成されたftcファイルはプロジェクトファイルと同一のパスに配置されます。&#xA;計算実行ダイアログ 計算実行ダイアログでは計算するケースにチェックを入れて実行ボタンを押します。 計算は指定したプロセス数で並列計算を行います。&#xA;計算が正しく終了したケースは緑色のチェックが表示されます。 AnalysisLogタブで解析ログ（F3Tのlogファイル）を確認できます。&#xA;計算エラー 計算が異常終了したケースは赤い×マークが表示されます。 AnalysisLogタブで解析ログ（F3Tのerrファイル）を確認できます。</description>
+    </item>
+    <item>
+      <title>結果のグラフ表示</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/08_resultviewer/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:13:11 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/08_resultviewer/index.html</guid>
+      <description>結果Viewerの表示 「クイック表示」では選択したタイプの組合せ、「組合せ選択表示」では左のツリーで選択したケースの組合せで計算結果をグラフで表示することができます。結果Viewerが起動すると計算が完了したケースが設定されています。 ひずみの固有値表、最大応答値表、Ci表 メインウィンドウの右上にある「ひずみの固有値表」「最大応答値表」「Ci表」をクリックするとそれぞれの表が表示されます。&#xA;固有値を計算した表になります。ばらつきや条件に従った結果を表示することができます。 条件については、「解析条件パネル」で設定した条件がここに表示されます。&#xA;最大応答値を示した表になります。上部構造や免震層、下部構造の応答がまとめられています。&#xA;各層の最大応答値を示した表になります。応答の条件等を選択して結果を表示します。&#xA;履歴の表示方法 「階重量」「復元力特性」「制振装置」「免震装置」パネルの左上をクリックすることで、履歴が表示されます。&#xA;計算結果の時刻歴表示 計算結果の履歴表示 解析結果出力ファイル 解析結果出力ファイルはプロジェクトファイルのフォルダに出力されます。 プロジェクトファイルのフォルダにプロジェクトファイルと同名のフォルダが作成され、その中に各セット毎のフォルダが作成されます。解析結果出力ファイルは全てこの[セット名]フォルダ内に出力されています。</description>
+    </item>
+    <item>
+      <title>概要書出力</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/09_output_report/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:13:32 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/09_output_report/index.html</guid>
+      <description>概要書出力 提出資料用に整形されたグラフと表をWordファイルに出力する機能です。&#xA;メイン画面「概要書出力」ボタンで概要書出力ダイアログを開きます。&#xA;メイン画面 「出力単位設定」で概要書に出力する単位を設定できます。 「目盛り定義」、「クライテリア定義」、「グラフ出力応答タイプ」ボタンから各定義を設定できます。&#xA;「大見出し」で設定した名称は概要書の大見出しになります。 「小見出し」で設定した名称は概要書の小見出しになります。 「MX計算セット」で選択した計算セットのグラフと最大応答値表が概要書に出力されます。 「目盛り」で小見出し毎に目盛り定義を選択できます。 「クライテリア」で小見出し毎のクライテリア定義を選択できます。 「出力先」に概要書のパスを指定します。 「概要書出力」ボタンで、出力先のパスに概要書を出力します。 「表示」ボタンで、出力先のパスの概要書を表示します。&#xA;連続する同名の「大見出し」は1つの大見出しとしてまとめられます。 解析が完了していない計算セットは「MX計算セット」が赤字で表示されます。 目盛り定義 目盛り定義一覧にグラフの目盛り定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。&#xA;「最小値」でグラフの最小値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「最大値」でグラフの最大値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「目盛り」でグラフの横軸の目盛り幅を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「補助目盛り」でグラフの横軸の補助目盛り幅を応答タイプ毎に設定できます。未入力の場合は補助目盛りが設定されません。&#xA;クライテリア定義 クライテリア定義一覧にグラフのクライテリア定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。 「階重量パネルの選択」でクライテリアを設定する階重量パネルを選択します。 マルチタワー時はそれぞれの階重量パネルに設定が必要です。 「クライテリア表示」で応答タイプ毎にクライテリア線の表示有無を設定します。 この設定はクライテリア定義毎によらず共通の設定です。&#xA;クライテリアを空白にした層（階）は線が描かれません。&#xA;グラフ出力応答タイプ 概要書にグラフを出力する応答タイプを選択します。</description>
+    </item>
+    <item>
+      <title>モデル図の表示</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/10_figure/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:14:16 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/10_figure/index.html</guid>
+      <description>メイン画面「モデル図」ボタンから、選択した計算セットのモデル図を表示します。 モデル図はPCで設定されているブラウザで表示されます。 モデル図はマウスホイール、右下のボタンで拡大・縮小ができます。マウスをドラッグすると表示範囲を移動できます。&#xA;パネルタイプごとに色分けされて表示されます。複数要素が配置されている箇所は、要素数で表示されます。各要素にマウスを当てることで要素の詳細が表示されます。</description>
+    </item>
+    <item>
+      <title>アニメーションの表示</title>
+      <link>http://localhost:1313/resp-docs/operations/02_analysis_flow/11_animetion/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 08:14:34 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/02_analysis_flow/11_animetion/index.html</guid>
+      <description>メイン画面「アニメ表示」ボタンから、選択した計算セットのアニメーション画面を表示することができます。&#xA;また計算実行画面からも選択した計算セットのアニメーション画面を表示することができます。&#xA;表示ケース選択 表示する計算ケース、ばらつきを選択 再生速度 再生速度倍率の指定 0.25倍、0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍 変位倍率&#x9;質点移動幅の倍率の指定 0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍 描画設定&#x9;質点サイズ、線幅を数値で指定 自動計算ボタンで画面サイズ、モデル形状に応じたサイズが自動で設定 地動変位の有無&#x9;地面の揺れを加えて絶対変位系で表現する機能 「地動変位を含む」場合、相対系の振動解析に地動変位（トリファナック法にて地動加速度を積分して求める）を加えることにより、地面が動く⾃然な動画を作成 画面サイズ&#x9;アニメーション表示画面のサイズを「VGA 640480」、「XGA 1024768」、「HDTV 1280*720」から選択 数値での直接指定も可 出力先&#x9;動画ファイルの出力先 出力先は解析結果が格納されているフォルダで固定 フォルダを開く&#x9;「出力先」のフォルダを開く 動画出力&#x9;「出力先」へ動画ファイル(.mp4)を出力 各種設定が反映された動画を作成 再生 出力済みの動画ファイルを再生 アニメーションはタワー毎に串団子で表示されます。免震階は紫色の直線で描かれます。タワー間をつなぐ任意ばねは青色の折れ線で描かれます。各質点の変形はロッキング変形も含んだ値で表示されています。下段は地震波が表示されます。 アニメーションは左下の「再生/一時停止」ボタン、「停止」ボタン、「リピート」ボタンで操作できます。</description>
+    </item>
+  </channel>
+</rss>

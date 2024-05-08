@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="プログラム概要 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/01_overview/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="プログラム概要 - RESP-MX マニュアル">
+    <meta property="og:description" content="RESP-MXとは 質点系振動解析プログラムは立体モデルによる振動解析が現実的な速度で解けるようになってきた現在においても、立体振動解析と比較して圧倒的に計算コストが低く、モデルもシンプルでパラメトリックスタディに優れることから今後も一定数使われていくと思われます。 パラメトリックスタディで重視すべきは「モデルを手早く作ってすぐに計算結果を見る」というところです。そのため、ただ入力を表計算形式にしただけではなく、
+複数のモデルを単一ファイルで管理 多機能な結果表示ビューワーと応答まとめ データ入力を簡単に行う入力補助機能 などを取り入れ実務者の視点で使いやすいプログラムに仕上げました。 以降ではRESP-MXならではの主な機能についてご紹介します。
+パラメトリックスタディに特化したインターフェース パラメトリックスタディを行う際、設計・解析のため幾つもの種類のモデルを作成していくと思いますが、モデルには共通部分とそうでない部分があります。 例えば免震層の設計時には様々な組み合わせを試しますが、上部建物は変更することはありません。 逆に上部に変更があり微修正をかける際には免震層は全く変更がない場合があります。
+また免震装置のばらつきを考慮した検討をする際には、装置の特性変動以外は変更しません。
+これらの変更をする時、各方向やばらつき毎にファイルが分かれていると修正漏れが生じるリスクがあります。そうでなくとも同じ修正を各ファイルに行うのは時間の無駄です。
+これを解決するためにパネルと呼ばれる要素単位を1つのモデルで幾つも定義し、それらを自由に組み合わせることでモデルを作成するという方法を採用しています。
+計算セットと解析ケース ひとつのMXファイルの中には複数のパネル組み合わせモデルを同時に定義することができます。 このモデル単位を「計算セット」と呼びます。（M2でのm2cファイル単位） 計算セットの中にはモデルに対してどのような波形を入力するのかを複数定義することができ、これを「解析ケース」と呼びます。（M2でのRESPコマンド単位）
+様々な入力補助機能 入力で時間がかかる理由の1つにマニュアルを見ながら多種多様なパラメータを入力していくという点が挙げられます。RESP-MXでは原則マニュアルを見ることなくパラメータを打ち込めるような配慮が各所に組み込まれています。
+また、免震装置等はプリセットで各メーカーのデータが入っていますので型番を選ぶだけで入力できます。
+大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行 例えば免振構造で評定に出す場合、 方向（X、Y、45、135）×ばらつき（標準、＋、－）×地震波（7波以上）にレベル1とレベル2、余裕度検討と100ケースを超える解析を行う必要があります。 しかも設計を完了するまでに何度も設計変更やパラメトリックスタディで再解析を行う必要があり、実際に設計時に実行する解析数はこの数倍にもなります。 これらを効率的に処理できるようにケース単位で実行する、しないを制御しつつ、マルチスレッド環境で無駄なく解析を行うことができます。
+RESP-M/Ⅱでプログラムの制約上出来なかった解析が可能に プログラムが新しくなったことで、既存の質点系振動解析プログラムのRESP-M/Ⅱでは今まで仕様上できなかった解析に対応しています。
+マルチタワーの正式な対応 建物のせん断成分だけに効くダンパー 等価曲げせん断型の中間層免震の対応 等々（随時追加予定） 複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ パラメトリックスタディを行っている時には前の結果との比較を簡単に行いたくなります。 RESP-MXのビューワーでは各モデルの応答を重ね合わせて表示することが簡単にできます。また、一度登録した組み合わせは保存しておき、いつでも再表示することが可能です。
+また、履歴ビューワーはスライダーバーを使って任意の時刻までを表示できるので、ある部材がどのような履歴を描いたのかをアニメーションのように見ることができます。
+他にも概要書に載せる項目だけを抽出した最大応答値一覧など、より実務向けに特化した機能もあります。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>プログラム概要 - RESP-MX マニュアル</title>
+    <link href="../../operations/01_overview/index.xml" rel="alternate" type="application/rss+xml" title="プログラム概要 - RESP-MX マニュアル">
+    <link href="../../operations/01_overview/index.print.html" rel="alternate" type="text/html" title="プログラム概要 - RESP-MX マニュアル">
+    <link href="../../images/favicon.ico?1715128926" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1715128926" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1715128926" rel="stylesheet">
+    <link href="../../css/fonts.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1715128926" rel="stylesheet">
+    <link href="../../css/theme-auto.css?1715128926" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-auto.css?1715128926" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/variant.css?1715128926" rel="stylesheet">
+    <link href="../../css/print.css?1715128926" rel="stylesheet" media="print">
+    <link href="../../css/ie.css?1715128926" rel="stylesheet">
+    <script src="../../js/url.js?1715128926"></script>
+    <script src="../../js/variant.js?1715128926"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../operations/01_overview/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="目次 (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">          <div class="default-animation progress">
+            <div class="toc-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#resp-mxとは">RESP-MXとは</a></li>
+    <li><a href="#パラメトリックスタディに特化したインターフェース">パラメトリックスタディに特化したインターフェース</a></li>
+    <li><a href="#計算セットと解析ケース">計算セットと解析ケース</a></li>
+    <li><a href="#様々な入力補助機能">様々な入力補助機能</a></li>
+    <li><a href="#大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行">大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行</a></li>
+    <li><a href="#resp-mでプログラムの制約上出来なかった解析が可能に">RESP-M/Ⅱでプログラムの制約上出来なかった解析が可能に</a></li>
+    <li><a href="#複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ">複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">プログラム概要</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+				
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/operations/01_overview/_index.md" target="_blank" title="編集 (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/01_overview/index.print.html" title="章全体を印刷する (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/index.html" title="操作編 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/02_analysis_flow/index.html" title="解析実行の流れ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="更に"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="プログラム概要">プログラム概要</h1>
+
+<h2 id="resp-mxとは">RESP-MXとは</h2>
+<p>質点系振動解析プログラムは立体モデルによる振動解析が現実的な速度で解けるようになってきた現在においても、立体振動解析と比較して圧倒的に計算コストが低く、モデルもシンプルでパラメトリックスタディに優れることから今後も一定数使われていくと思われます。
+パラメトリックスタディで重視すべきは「モデルを手早く作ってすぐに計算結果を見る」というところです。そのため、ただ入力を表計算形式にしただけではなく、</p>
+<ul>
+<li>複数のモデルを単一ファイルで管理</li>
+<li>多機能な結果表示ビューワーと応答まとめ</li>
+<li>データ入力を簡単に行う入力補助機能
+などを取り入れ実務者の視点で使いやすいプログラムに仕上げました。</li>
+</ul>
+<p>以降ではRESP-MXならではの主な機能についてご紹介します。</p>
+<p><a href="#R-image-f3fc76c7a173be97deb5973a3611511f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_1.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f3fc76c7a173be97deb5973a3611511f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_1.drawio.png"></a></p>
+<h2 id="パラメトリックスタディに特化したインターフェース">パラメトリックスタディに特化したインターフェース</h2>
+<p>パラメトリックスタディを行う際、設計・解析のため幾つもの種類のモデルを作成していくと思いますが、モデルには共通部分とそうでない部分があります。
+例えば免震層の設計時には様々な組み合わせを試しますが、上部建物は変更することはありません。
+逆に上部に変更があり微修正をかける際には免震層は全く変更がない場合があります。</p>
+<p>また免震装置のばらつきを考慮した検討をする際には、装置の特性変動以外は変更しません。</p>
+<p>これらの変更をする時、各方向やばらつき毎にファイルが分かれていると修正漏れが生じるリスクがあります。そうでなくとも同じ修正を各ファイルに行うのは時間の無駄です。</p>
+<p><a href="#R-image-1595508048e1377310eb497a75931008" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_2.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1595508048e1377310eb497a75931008"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_2.drawio.png"></a></p>
+<p>これを解決するためにパネルと呼ばれる要素単位を1つのモデルで幾つも定義し、それらを自由に組み合わせることでモデルを作成するという方法を採用しています。</p>
+<h2 id="計算セットと解析ケース">計算セットと解析ケース</h2>
+<p>ひとつのMXファイルの中には複数のパネル組み合わせモデルを同時に定義することができます。
+このモデル単位を「計算セット」と呼びます。（M2でのm2cファイル単位）
+　計算セットの中にはモデルに対してどのような波形を入力するのかを複数定義することができ、これを「解析ケース」と呼びます。（M2でのRESPコマンド単位）</p>
+<p><a href="#R-image-f200355d1cdf10f08b384fb0880d5dce" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f200355d1cdf10f08b384fb0880d5dce"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image8.png"></a></p>
+<p><a href="#R-image-c0996686e5795e906ae5daaa9e9a4220" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_5.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c0996686e5795e906ae5daaa9e9a4220"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_5.drawio.png"></a></p>
+<h2 id="様々な入力補助機能">様々な入力補助機能</h2>
+<p>　入力で時間がかかる理由の1つにマニュアルを見ながら多種多様なパラメータを入力していくという点が挙げられます。RESP-MXでは原則マニュアルを見ることなくパラメータを打ち込めるような配慮が各所に組み込まれています。</p>
+<p><a href="#R-image-2dd371f1c528e66f14d849ffb6d6bd54" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_6.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2dd371f1c528e66f14d849ffb6d6bd54"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_6.drawio.png"></a></p>
+<p>　また、免震装置等はプリセットで各メーカーのデータが入っていますので型番を選ぶだけで入力できます。</p>
+<p><a href="#R-image-d27bf28ad7e940e527daa14b5815707b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_7.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d27bf28ad7e940e527daa14b5815707b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_7.drawio.png"></a></p>
+<h2 id="大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行">大量の解析ケースをマルチスレッドによる並列処理で無駄なく実行</h2>
+<p>　例えば免振構造で評定に出す場合、
+方向（X、Y、45、135）×ばらつき（標準、＋、－）×地震波（7波以上）にレベル1とレベル2、余裕度検討と100ケースを超える解析を行う必要があります。
+　しかも設計を完了するまでに何度も設計変更やパラメトリックスタディで再解析を行う必要があり、実際に設計時に実行する解析数はこの数倍にもなります。
+　これらを効率的に処理できるようにケース単位で実行する、しないを制御しつつ、マルチスレッド環境で無駄なく解析を行うことができます。</p>
+<p><a href="#R-image-eeca30622bb5b66cfdf1bf81917c613d" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image25.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eeca30622bb5b66cfdf1bf81917c613d"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image25.png"></a></p>
+<h2 id="resp-mでプログラムの制約上出来なかった解析が可能に">RESP-M/Ⅱでプログラムの制約上出来なかった解析が可能に</h2>
+<p>　プログラムが新しくなったことで、既存の質点系振動解析プログラムのRESP-M/Ⅱでは今まで仕様上できなかった解析に対応しています。</p>
+<ul>
+<li>マルチタワーの正式な対応</li>
+<li>建物のせん断成分だけに効くダンパー</li>
+<li>等価曲げせん断型の中間層免震の対応
+等々（随時追加予定）</li>
+</ul>
+<h2 id="複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ">複数の解析ケースの結果を素早く表示する結果ビューワーと応答まとめ</h2>
+<p>　パラメトリックスタディを行っている時には前の結果との比較を簡単に行いたくなります。
+RESP-MXのビューワーでは各モデルの応答を重ね合わせて表示することが簡単にできます。また、一度登録した組み合わせは保存しておき、いつでも再表示することが可能です。</p>
+<p>また、履歴ビューワーはスライダーバーを使って任意の時刻までを表示できるので、ある部材がどのような履歴を描いたのかをアニメーションのように見ることができます。</p>
+<p>他にも概要書に載せる項目だけを抽出した最大応答値一覧など、より実務向けに特化した機能もあります。</p>
+<p><a href="#R-image-34ad8ebf1ae4693787cc4009595575f4" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./image1_1_8.drawio.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34ad8ebf1ae4693787cc4009595575f4"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./image1_1_8.drawio.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <img src="../../respdlogo.png" />
+
+        </div>
+        <form action="../../search.html" method="get"><div class="searchbox default-animation">
+          <button class="search-detail" type="submit" title="検索 (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+          <label class="a11y-only" for="search-by">検索</label>
+          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="検索...">
+          <button class="search-clear" type="button" data-search-clear="" title="検索をクリア"><i class="fas fa-times" title="検索をクリア"></i></button>
+        </div></form>
+        <script>
+          var contentLangs=['ja'];
+        </script>
+        <script src="../../js/auto-complete.js?1715128926" defer></script>
+        <script src="../../js/lunr/lunr.min.js?1715128926" defer></script>
+        <script src="../../js/lunr/lunr.stemmer.support.min.js?1715128926" defer></script>
+        <script src="../../js/lunr/lunr.multi.min.js?1715128926" defer></script>
+        <script src="../../js/lunr/tinyseg.js?1715128926" defer></script>
+        <script src="../../js/lunr/lunr.ja.min.js?1715128926" defer></script>
+        <script src="../../js/search.js?1715128926" defer></script>
+
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/operations/index.html" class="parent "><input type="checkbox" id="R-section-c1aa3648cff0ca4809c0a5c2cb9d1eef" aria-controls="R-subsections-c1aa3648cff0ca4809c0a5c2cb9d1eef" checked><label for="R-section-c1aa3648cff0ca4809c0a5c2cb9d1eef"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー 操作編</span></label><a class="padding" href="../../operations/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 操作編</a><ul id="R-subsections-c1aa3648cff0ca4809c0a5c2cb9d1eef" class="morespace collapsible-menu">
+          <li data-nav-id="/operations/01_overview/index.html" class="active"><a class="padding" href="../../operations/01_overview/index.html">プログラム概要</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/index.html" class="alwaysopen"><input type="checkbox" id="R-section-6ac4eceaa9b61bdaff0d467b2c6104f6" aria-controls="R-subsections-6ac4eceaa9b61bdaff0d467b2c6104f6" checked><label for="R-section-6ac4eceaa9b61bdaff0d467b2c6104f6"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー 解析実行の流れ</span></label><a class="padding" href="../../operations/02_analysis_flow/index.html">解析実行の流れ</a><ul id="R-subsections-6ac4eceaa9b61bdaff0d467b2c6104f6" class="morespace collapsible-menu">
+          <li data-nav-id="/operations/02_analysis_flow/01_startapp/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/01_startapp/index.html">スタートアップ</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/02_newproject/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/02_newproject/index.html">新規プロジェクト</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/03_panel/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/03_panel/index.html">新規パネルの作成</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/04_panel_setting/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/04_panel_setting/index.html">パネル配置</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/05_panel_edit/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/05_panel_edit/index.html">パネル編集</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/06_calcset/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/06_calcset/index.html">計算セットの追加</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/07_analysis/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/07_analysis/index.html">解析実行</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/08_resultviewer/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/08_resultviewer/index.html">結果のグラフ表示</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/09_output_report/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/09_output_report/index.html">概要書出力</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/10_figure/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/10_figure/index.html">モデル図の表示</a></li>
+          <li data-nav-id="/operations/02_analysis_flow/11_animetion/index.html" class=""><a class="padding" href="../../operations/02_analysis_flow/11_animetion/index.html">アニメーションの表示</a></li></ul></li>
+          <li data-nav-id="/operations/03_dialogs/index.html" class="alwaysopen"><input type="checkbox" id="R-section-159af6d26699923dd2e40e5e3830caa0" aria-controls="R-subsections-159af6d26699923dd2e40e5e3830caa0" checked><label for="R-section-159af6d26699923dd2e40e5e3830caa0"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー ダイアログ</span></label><a class="padding" href="../../operations/03_dialogs/index.html">ダイアログ</a><ul id="R-subsections-159af6d26699923dd2e40e5e3830caa0" class="morespace collapsible-menu">
+          <li data-nav-id="/operations/03_dialogs/01_commonsettingn/index.html" class=""><a class="padding" href="../../operations/03_dialogs/01_commonsettingn/index.html">共通設定</a></li>
+          <li data-nav-id="/operations/03_dialogs/02_story/index.html" class=""><a class="padding" href="../../operations/03_dialogs/02_story/index.html">階重量</a></li>
+          <li data-nav-id="/operations/03_dialogs/03_frame/index.html" class=""><a class="padding" href="../../operations/03_dialogs/03_frame/index.html">復元力特性</a></li>
+          <li data-nav-id="/operations/03_dialogs/04_spring/index.html" class=""><a class="padding" href="../../operations/03_dialogs/04_spring/index.html">任意ばね</a></li>
+          <li data-nav-id="/operations/03_dialogs/05_damper/index.html" class=""><a class="padding" href="../../operations/03_dialogs/05_damper/index.html">制振部材</a></li>
+          <li data-nav-id="/operations/03_dialogs/06_isolator/index.html" class=""><a class="padding" href="../../operations/03_dialogs/06_isolator/index.html">免震部材</a></li>
+          <li data-nav-id="/operations/03_dialogs/07_iterator/index.html" class=""><a class="padding" href="../../operations/03_dialogs/07_iterator/index.html">繰返し依存</a></li>
+          <li data-nav-id="/operations/03_dialogs/08_scat/index.html" class=""><a class="padding" href="../../operations/03_dialogs/08_scat/index.html">ばらつき</a></li>
+          <li data-nav-id="/operations/03_dialogs/09_multitower/index.html" class=""><a class="padding" href="../../operations/03_dialogs/09_multitower/index.html">マルチタワー</a></li>
+          <li data-nav-id="/operations/03_dialogs/10_analysis/index.html" class=""><a class="padding" href="../../operations/03_dialogs/10_analysis/index.html">解析条件</a></li>
+          <li data-nav-id="/operations/03_dialogs/11_analysiscase/index.html" class=""><a class="padding" href="../../operations/03_dialogs/11_analysiscase/index.html">解析ケース</a></li></ul></li>
+          <li data-nav-id="/operations/04_create_model/index.html" class=""><a class="padding" href="../../operations/04_create_model/index.html">モデル作成</a></li>
+          <li data-nav-id="/operations/05_menus/index.html" class="alwaysopen"><input type="checkbox" id="R-section-54aecfb1a68800feb2a812bde78dc6d0" aria-controls="R-subsections-54aecfb1a68800feb2a812bde78dc6d0" checked><label for="R-section-54aecfb1a68800feb2a812bde78dc6d0"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー メニューの説明</span></label><a class="padding" href="../../operations/05_menus/index.html">メニューの説明</a><ul id="R-subsections-54aecfb1a68800feb2a812bde78dc6d0" class="morespace collapsible-menu">
+          <li data-nav-id="/operations/05_menus/01_files/index.html" class=""><a class="padding" href="../../operations/05_menus/01_files/index.html">ファイル</a></li>
+          <li data-nav-id="/operations/05_menus/02_help/index.html" class=""><a class="padding" href="../../operations/05_menus/02_help/index.html">ヘルプ</a></li></ul></li>
+          <li data-nav-id="/operations/06_others/index.html" class="alwaysopen"><input type="checkbox" id="R-section-7410aaa977055994c7ea2fccbc36ea7e" aria-controls="R-subsections-7410aaa977055994c7ea2fccbc36ea7e" checked><label for="R-section-7410aaa977055994c7ea2fccbc36ea7e"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー その他機能</span></label><a class="padding" href="../../operations/06_others/index.html">その他機能</a><ul id="R-subsections-7410aaa977055994c7ea2fccbc36ea7e" class="morespace collapsible-menu">
+          <li data-nav-id="/operations/06_others/01_expand/index.html" class=""><a class="padding" href="../../operations/06_others/01_expand/index.html">メイン画面の展開</a></li>
+          <li data-nav-id="/operations/06_others/02_pan/index.html" class=""><a class="padding" href="../../operations/06_others/02_pan/index.html">メイン画面のパン</a></li>
+          <li data-nav-id="/operations/06_others/03_memo/index.html" class=""><a class="padding" href="../../operations/06_others/03_memo/index.html">メモ欄</a></li></ul></li></ul></li>
+          <li data-nav-id="/calculations/index.html" class=""><input type="checkbox" id="R-section-70948db0aac54da088a523bad4901794" aria-controls="R-subsections-70948db0aac54da088a523bad4901794"><label for="R-section-70948db0aac54da088a523bad4901794"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー 計算編</span></label><a class="padding" href="../../calculations/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 計算編</a><ul id="R-subsections-70948db0aac54da088a523bad4901794" class="morespace collapsible-menu">
+          <li data-nav-id="/calculations/overview/index.html" class="alwaysopen"><input type="checkbox" id="R-section-2af8dead73ba3a5c1f736ead973f8bad" aria-controls="R-subsections-2af8dead73ba3a5c1f736ead973f8bad" checked><label for="R-section-2af8dead73ba3a5c1f736ead973f8bad"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー Content01</span></label><a class="padding" href="../../calculations/overview/index.html">Content01</a><ul id="R-subsections-2af8dead73ba3a5c1f736ead973f8bad" class="morespace collapsible-menu">
+          <li data-nav-id="/calculations/overview/content02/index.html" class=""><a class="padding" href="../../calculations/overview/content02/index.html">Content02</a></li>
+          <li data-nav-id="/calculations/overview/content01_index2/index.html" class=""><a class="padding" href="../../calculations/overview/content01_index2/index.html">Content01_index2</a></li></ul></li></ul></li>
+          <li data-nav-id="/basics/index.html" class=""><input type="checkbox" id="R-section-a6deabe447afe1b2e1405bfc57ca61ff" aria-controls="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff"><label for="R-section-a6deabe447afe1b2e1405bfc57ca61ff"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">サブメニュー テスト</span></label><a class="padding" href="../../basics/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">0.</b> テスト</a><ul id="R-subsections-a6deabe447afe1b2e1405bfc57ca61ff" class="morespace collapsible-menu">
+          <li data-nav-id="/basics/second-content/index.html" class=""><a class="padding" href="../../basics/second-content/index.html">Second Content</a></li>
+          <li data-nav-id="/basics/first-content/index.html" class=""><a class="padding" href="../../basics/first-content/index.html">First Content</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">links</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/McShelby/hugo-theme-relearn"><i class='fab fa-fw fa-github'></i> GitHub repo</a></li>
+            <li><a class="padding" href="https://resp-blog.kke.co.jp/"><i class='fas fa-fw fa-registered'></i> RESP技術ブログ</a></li>
+            <li><a class="padding" href="https://www4.kke.co.jp/resp/"><i class='fas fa-fw fa-registered'></i> RESPホームページ</a></li>
+            <li><a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Hugo Documentation</a></li>
+            <li><a class="padding" href="../../index.html"><i class='fas fa-fw fa-bullhorn'></i> Credits</a></li>
+            <li><a class="padding" href="../../tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch showLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">言語</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-ja" value="#R-select-language-ja" data-url="../../operations/01_overview/index.html" lang="ja" selected>Japanese</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">テーマ</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                      <option id="R-select-variant-learn" value="learn">Learn</option>
+                      <option id="R-select-variant-neon" value="neon">Neon</option>
+                      <option id="R-select-variant-blue" value="blue">Blue</option>
+                      <option id="R-select-variant-green" value="green">Green</option>
+                      <option id="R-select-variant-red" value="red">Red</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">履歴削除</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+          <style>
+            #footer {
+              font-size: .8125rem;
+              height: 6.25rem;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 2rem 1rem;
+              text-align: center;
+              min-width: 14.375rem;
+              max-width: 18.75rem;
+            }
+            #footer p {
+              margin: 0;
+            }
+          </style>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/archive/main.zip" data-icon="octicon-cloud-download" aria-label="Download McShelby/hugo-theme-relearn on GitHub">Download</a>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
+          <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          <script async src="../../js/buttons.js?1715128926"></script>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="../../js/clipboard.min.js?1715128926" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1715128926" defer></script>
+    <script src="../../js/theme.js?1715128926" defer></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>メニューの説明 on RESP-MX マニュアル</title>
+    <link>http://localhost:1313/resp-docs/operations/05_menus/index.html</link>
+    <description>Recent content in メニューの説明 on RESP-MX マニュアル</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 17 Apr 2024 09:03:16 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/resp-docs/operations/05_menus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ファイル</title>
+      <link>http://localhost:1313/resp-docs/operations/05_menus/01_files/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 09:03:07 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/05_menus/01_files/index.html</guid>
+      <description>新規作成 新規プロジェクトの作成を行います。&#xA;空 共通設定だけを行い、他には設定しないプロジェクトを作成します。 ウィザード 耐震モデル、免震モデル、制振モデルから選択し、モデル情報を入力します。 RESP-M2(.m2c, .rlt) m2cファイルやrltファイルを読み込み&#xA;それらをMXのモデル情報としてコンバートしたプロジェクトを作成します。 ※M2Converterにおいて、m2cファイルの単位の指定がない場合は[t]に自動設定される。&#xA;新規作成ダイアログを表示 「スタートアップ」画面を表示し、データの新規作成を行います。 「スタートアップ」画面については2.1を参照してください。&#xA;開く 拡張子.mxpjのプロジェクトファイルを開きます。&#xA;インポート 現在開いているプロジェクトに、別のプロジェクトのパネル、データベース、計算セットを追加することができる機能です。RESP-MXの場合はmxpjファイルを選択し、そのプロジェクトを現在のプロジェクトに追加します。RESP-M2の場合は.m2c、.rltファイルを選択し、RESP-MX用にコンバートしたのち、現在のプロジェクトに追加します。&#xA;インポート設定画面は以下のようになっています。追加したい計算セット、データベース、パネルにチェックを入れて設定します。 なお、データベース名が重複する場合、符号のあとに「001」というように連番が付けられていき、区別されるようになります。計算セットやパネルに関しても、重複を回避するように名前の後に「(ファイル名)」というように付いて区別されます。 また、データベースをインポートしなかった場合は、パネルの内容を既存のデータベースから用いる仕様になっています。&#xA;上書き保存 現在のプロジェクトを保存前のプロジェクトに上書きして保存します。&#xA;名前を付けて保存 現在のプロジェクトを名前を付けて別プロジェクトとして保存します。</description>
+    </item>
+    <item>
+      <title>ヘルプ</title>
+      <link>http://localhost:1313/resp-docs/operations/05_menus/02_help/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 09:03:16 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/05_menus/02_help/index.html</guid>
+      <description>マニュアル表示 「操作マニュアル」「M2変換マニュアル」「ライセンス認証ガイド」を表示することができます。&#xA;フィードバックを送信 メールを使ってフィードバックを送信することができます。&#xA;バージョンを表示 RESP-MXの現在のバージョンを表示します。</description>
+    </item>
+  </channel>
+</rss>

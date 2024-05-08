@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="概要書出力 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/02_analysis_flow/09_output_report/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="概要書出力 - RESP-MX マニュアル">
+    <meta property="og:description" content="概要書出力 提出資料用に整形されたグラフと表をWordファイルに出力する機能です。
+メイン画面「概要書出力」ボタンで概要書出力ダイアログを開きます。
+メイン画面 「出力単位設定」で概要書に出力する単位を設定できます。 「目盛り定義」、「クライテリア定義」、「グラフ出力応答タイプ」ボタンから各定義を設定できます。
+「大見出し」で設定した名称は概要書の大見出しになります。 「小見出し」で設定した名称は概要書の小見出しになります。 「MX計算セット」で選択した計算セットのグラフと最大応答値表が概要書に出力されます。 「目盛り」で小見出し毎に目盛り定義を選択できます。 「クライテリア」で小見出し毎のクライテリア定義を選択できます。 「出力先」に概要書のパスを指定します。 「概要書出力」ボタンで、出力先のパスに概要書を出力します。 「表示」ボタンで、出力先のパスの概要書を表示します。
+連続する同名の「大見出し」は1つの大見出しとしてまとめられます。 解析が完了していない計算セットは「MX計算セット」が赤字で表示されます。 目盛り定義 目盛り定義一覧にグラフの目盛り定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。
+「最小値」でグラフの最小値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「最大値」でグラフの最大値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「目盛り」でグラフの横軸の目盛り幅を応答タイプ毎に設定できます。未入力の場合は自動設定されます。 「補助目盛り」でグラフの横軸の補助目盛り幅を応答タイプ毎に設定できます。未入力の場合は補助目盛りが設定されません。
+クライテリア定義 クライテリア定義一覧にグラフのクライテリア定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。 「階重量パネルの選択」でクライテリアを設定する階重量パネルを選択します。 マルチタワー時はそれぞれの階重量パネルに設定が必要です。 「クライテリア表示」で応答タイプ毎にクライテリア線の表示有無を設定します。 この設定はクライテリア定義毎によらず共通の設定です。
+クライテリアを空白にした層（階）は線が描かれません。
+グラフ出力応答タイプ 概要書にグラフを出力する応答タイプを選択します。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>概要書出力 - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/02_analysis_flow/09_output_report/index.html" rel="canonical" type="text/html" title="概要書出力 - RESP-MX マニュアル">
+    <link href="../../../operations/02_analysis_flow/09_output_report/index.xml" rel="alternate" type="application/rss+xml" title="概要書出力 - RESP-MX マニュアル">
+    <link href="../../../images/favicon.ico?1715127397" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1715127398" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1715127398" rel="stylesheet">
+    <link href="../../../css/fonts.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1715127398" rel="stylesheet">
+    <link href="../../../css/theme-auto.css?1715127398" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-auto.css?1715127398" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/variant.css?1715127398" rel="stylesheet">
+    <link href="../../../css/print.css?1715127398" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1715127398" rel="stylesheet">
+    <link href="../../../css/ie.css?1715127398" rel="stylesheet">
+    <script src="../../../js/url.js?1715127398"></script>
+    <script src="../../../js/variant.js?1715127398"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../operations/02_analysis_flow/09_output_report/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/02_analysis_flow/index.html"><span itemprop="name">解析実行の流れ</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">概要書出力</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/02_analysis_flow/08_resultviewer/index.html" title="結果のグラフ表示 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/02_analysis_flow/10_figure/index.html" title="モデル図の表示 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="概要書出力">概要書出力</h1>
+
+<h2 id="概要書出力">概要書出力</h2>
+<p>　提出資料用に整形されたグラフと表をWordファイルに出力する機能です。</p>
+<p><a href="#R-image-bdb3471f5afb5d10c1db2e2bec02a988" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image61.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bdb3471f5afb5d10c1db2e2bec02a988"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image61.png"></a>
+<a href="#R-image-566356edfa2560bc7f28b3045f562a08" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image62.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-566356edfa2560bc7f28b3045f562a08"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image62.png"></a></p>
+<p>メイン画面「概要書出力」ボタンで概要書出力ダイアログを開きます。</p>
+<p><a href="#R-image-a87b8aecdbf5522c87a03ae84e9e71ed" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image63.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a87b8aecdbf5522c87a03ae84e9e71ed"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image63.png"></a></p>
+<h2 id="メイン画面">メイン画面</h2>
+<p><a href="#R-image-f0e54cdb8c0e7d2852f90400199d6c48" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image64.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f0e54cdb8c0e7d2852f90400199d6c48"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image64.png"></a></p>
+<p>「出力単位設定」で概要書に出力する単位を設定できます。
+「目盛り定義」、「クライテリア定義」、「グラフ出力応答タイプ」ボタンから各定義を設定できます。</p>
+<p>　「大見出し」で設定した名称は概要書の大見出しになります。
+　「小見出し」で設定した名称は概要書の小見出しになります。
+　「MX計算セット」で選択した計算セットのグラフと最大応答値表が概要書に出力されます。
+　「目盛り」で小見出し毎に目盛り定義を選択できます。
+　「クライテリア」で小見出し毎のクライテリア定義を選択できます。
+　
+「出力先」に概要書のパスを指定します。
+　「概要書出力」ボタンで、出力先のパスに概要書を出力します。
+　「表示」ボタンで、出力先のパスの概要書を表示します。</p>
+<p>連続する同名の「大見出し」は1つの大見出しとしてまとめられます。
+　解析が完了していない計算セットは「MX計算セット」が赤字で表示されます。
+ </p>
+<h2 id="目盛り定義">目盛り定義</h2>
+<p><a href="#R-image-209758b52f14188de93765a5c67d661f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image65.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-209758b52f14188de93765a5c67d661f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image65.png"></a></p>
+<p>　目盛り定義一覧にグラフの目盛り定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。</p>
+<p>　「最小値」でグラフの最小値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。
+　「最大値」でグラフの最大値を応答タイプ毎に設定できます。未入力の場合は自動設定されます。
+　「目盛り」でグラフの横軸の目盛り幅を応答タイプ毎に設定できます。未入力の場合は自動設定されます。
+　「補助目盛り」でグラフの横軸の補助目盛り幅を応答タイプ毎に設定できます。未入力の場合は補助目盛りが設定されません。</p>
+<p><a href="#R-image-f48b69bb9daad3c0e9f6a4c0f0af4b8e" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image66.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f48b69bb9daad3c0e9f6a4c0f0af4b8e"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image66.png"></a></p>
+<h2 id="クライテリア定義">クライテリア定義</h2>
+<p><a href="#R-image-600bbc8952de0adfbb35fdb3690dd5f2" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image67.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-600bbc8952de0adfbb35fdb3690dd5f2"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image67.png"></a></p>
+<p>　クライテリア定義一覧にグラフのクライテリア定義を追加・削除できます。単位系は概要書出力メイン画面の「出力単位設定」に準じます。
+　「階重量パネルの選択」でクライテリアを設定する階重量パネルを選択します。
+マルチタワー時はそれぞれの階重量パネルに設定が必要です。
+　「クライテリア表示」で応答タイプ毎にクライテリア線の表示有無を設定します。
+この設定はクライテリア定義毎によらず共通の設定です。</p>
+<p>　クライテリアを空白にした層（階）は線が描かれません。</p>
+<p><a href="#R-image-062df73db2ebd0c314a8d703840d220a" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image68.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-062df73db2ebd0c314a8d703840d220a"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image68.png"></a>
+ </p>
+<h2 id="グラフ出力応答タイプ">グラフ出力応答タイプ</h2>
+<p><a href="#R-image-1a0769733f98af6a55a8b9a9c6fda546" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image69.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a0769733f98af6a55a8b9a9c6fda546"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/09_output_report/./image69.png"></a></p>
+<p>概要書にグラフを出力する応答タイプを選択します。</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1715127398" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1715127398" defer></script>
+    <script src="../../../js/theme.js?1715127398" defer></script>
+  </body>
+</html>

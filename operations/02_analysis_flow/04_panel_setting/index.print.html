@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="パネル配置 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/02_analysis_flow/04_panel_setting/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="パネル配置 - RESP-MX マニュアル">
+    <meta property="og:description" content="計算セットはパネルの組み合わせで定義されます。パネルを配置するには、画面左のパネルツリーにあるパネルを配置したい計算セットにドラッグ＆ドロップします。
+また計算セットの配置したいパネルの右上のOFF状態をクリックしてON状態にすることでもパネルが配置されます。
+パネルの配置解除 パネル配置を解除するには、計算セットのパネルをマウスで選択しDeleteキーを押します。 消えるのはあくまで当該計算セットへの登録情報のみでパネルの定義そのものは消えません。 パネルの右上のON状態をクリックしてOFF状態にすることでもパネルが配置が解除されます。
+パネル定義の削除 パネルの定義を削除するにはパネルツリーの該当パネル上で右クリックから「パネル削除」を選択してください。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>パネル配置 - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/02_analysis_flow/04_panel_setting/index.html" rel="canonical" type="text/html" title="パネル配置 - RESP-MX マニュアル">
+    <link href="../../../operations/02_analysis_flow/04_panel_setting/index.xml" rel="alternate" type="application/rss+xml" title="パネル配置 - RESP-MX マニュアル">
+    <link href="../../../images/favicon.ico?1715128926" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1715128926" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1715128926" rel="stylesheet">
+    <link href="../../../css/fonts.css?1715128926" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1715128926" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1715128926" rel="stylesheet">
+    <link href="../../../css/theme-auto.css?1715128926" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-auto.css?1715128926" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/variant.css?1715128926" rel="stylesheet">
+    <link href="../../../css/print.css?1715128926" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1715128926" rel="stylesheet">
+    <link href="../../../css/ie.css?1715128926" rel="stylesheet">
+    <script src="../../../js/url.js?1715128926"></script>
+    <script src="../../../js/variant.js?1715128926"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../operations/02_analysis_flow/04_panel_setting/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/02_analysis_flow/index.html"><span itemprop="name">解析実行の流れ</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">パネル配置</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/02_analysis_flow/03_panel/index.html" title="新規パネルの作成 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/02_analysis_flow/05_panel_edit/index.html" title="パネル編集 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="パネル配置">パネル配置</h1>
+
+<p>計算セットはパネルの組み合わせで定義されます。パネルを配置するには、画面左のパネルツリーにあるパネルを配置したい計算セットにドラッグ＆ドロップします。</p>
+<p><a href="#R-image-bd85508ee9e13f1a702d5b2c8817fe84" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image32.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bd85508ee9e13f1a702d5b2c8817fe84"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image32.png"></a></p>
+<p>また計算セットの配置したいパネルの右上のOFF状態をクリックしてON状態にすることでもパネルが配置されます。</p>
+<h2 id="パネルの配置解除">パネルの配置解除</h2>
+<p>　パネル配置を解除するには、計算セットのパネルをマウスで選択しDeleteキーを押します。
+消えるのはあくまで当該計算セットへの登録情報のみでパネルの定義そのものは消えません。
+　パネルの右上のON状態をクリックしてOFF状態にすることでもパネルが配置が解除されます。</p>
+<h2 id="パネル定義の削除">パネル定義の削除</h2>
+<p>　パネルの定義を削除するにはパネルツリーの該当パネル上で右クリックから「パネル削除」を選択してください。</p>
+<p><a href="#R-image-38a077a25efc34ef10b0069226ff5986" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image34.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-38a077a25efc34ef10b0069226ff5986"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image34.png"></a>
+<a href="#R-image-e089f1f50623bed1a13993518156a37a" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image35.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e089f1f50623bed1a13993518156a37a"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image35.png"></a>
+<a href="#R-image-141ca37dc8f9f3cb94f74b31ac018f48" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image36.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-141ca37dc8f9f3cb94f74b31ac018f48"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image36.png"></a>
+<a href="#R-image-d6eb507fbd8ef029be15e91163c3abad" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image37.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6eb507fbd8ef029be15e91163c3abad"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image37.png"></a>
+<a href="#R-image-3262188e60961ff9cf35b519643f01f4" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image38.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3262188e60961ff9cf35b519643f01f4"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/04_panel_setting/./image38.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1715128926" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1715128926" defer></script>
+    <script src="../../../js/theme.js?1715128926" defer></script>
+  </body>
+</html>

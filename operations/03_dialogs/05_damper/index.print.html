@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="制振部材 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/03_dialogs/05_damper/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="制振部材 - RESP-MX マニュアル">
+    <meta property="og:description" content="各階配置 各階に制震部材を配置できます。 階重量パネルを選択します。対象とする階重量パネルは自動指定と直接指定が選択できます。 [自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ制振装置を配置します。 特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。 マルチタワーモデルでは直接指定が必須です。 制震装置データベースで設定した部材の符号を選択し、基数、角度を設定することで部材を配置していきます。階名は自動で入力されます。 上部のボタンで行の追加、削除、挿入を行うことができます。
+任意層間配置 任意の層間に制震部材を配置できます。 制震装置データベースで設定した部材の符号を選択し、階パネルと層、基数、角度を設定することで部材を配置していきます。 上部のボタンで行の追加、削除、挿入を行うことができます。
+製品選択（制振装置データベース） 追加をクリックし、設置する制震部材を選択します。 その後、左のオイルダンパー、鋼材系ダンパーのウィンドウで符号と各パラメータを設定します。 行の追加・削除は右クリックまたは上部のボタンで行います。 なお、制振装置のオイルダンパーは免震装置のばらつきの影響は反映されません。免震装置としてのオイルダンパーを入力する場合は免震装置パネルの「直接入力」より選択してください。
+＜ダンパーの角度＞ ダンパーの角度について、右図のように、水平方向からの傾きを入力します。 また、実際に計算に用いられる剛性としては、 〖k=k〗_0×〖cos〗^2 θ となります。オイルダンパーではk_0を入力します。
+製品説明 各制振装置の説明と入力項目について説明します。以下の項目を選択し、「追加」をクリックすることでデータベースに追加しパラメータを入力することができます。
+状態NRT評価とは、下記文献に示される制振建物の振動モデルの分析方法で、履歴型/速度依存型ダンパーの設置位置・支持方法によって変化するダンパーの効果を把握し、モデルの妥当性を確認する手がかりが得られます。この評価によって算出されたばね値を用いることで、ダンパーの架構内における実効変形を精度よく評価することが可能になります。 石井正人, 笠井和彦 「多層制振構造の時刻歴解析に用いるせん断棒モデルの提案」 日本建築学会構造系論文集 / 75 巻 (2010) 647 号
+・オイルダンパー
+項目 内容 省略値 上限 下限 単位 符号	符号名を直接入力	省略不可	－	－	－ 支持剛性 （状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm 直列ばねの剛性	直列ばねの剛性を直接入力	無限大	－	－	N/mm 減衰係数	減衰係数を直接入力	0.0	－	－	N*sec/mm リリーフ荷重	リリーフ荷重を直接入力	リリーフ無し	－	－	N 減衰係数低下率	減衰係数低下率を直接入力	0.">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>制振部材 - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/03_dialogs/05_damper/index.html" rel="canonical" type="text/html" title="制振部材 - RESP-MX マニュアル">
+    <link href="../../../operations/03_dialogs/05_damper/index.xml" rel="alternate" type="application/rss+xml" title="制振部材 - RESP-MX マニュアル">
+    <link href="../../../images/favicon.ico?1715127397" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1715127398" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1715127398" rel="stylesheet">
+    <link href="../../../css/fonts.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1715127398" rel="stylesheet">
+    <link href="../../../css/theme-auto.css?1715127398" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-auto.css?1715127398" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/variant.css?1715127398" rel="stylesheet">
+    <link href="../../../css/print.css?1715127398" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1715127398" rel="stylesheet">
+    <link href="../../../css/ie.css?1715127398" rel="stylesheet">
+    <script src="../../../js/url.js?1715127398"></script>
+    <script src="../../../js/variant.js?1715127398"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../operations/03_dialogs/05_damper/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/03_dialogs/index.html"><span itemprop="name">ダイアログ</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">制振部材</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/03_dialogs/04_spring/index.html" title="任意ばね (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/03_dialogs/06_isolator/index.html" title="免震部材 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="制振部材">制振部材</h1>
+
+<h2 id="各階配置">各階配置</h2>
+<p>各階に制震部材を配置できます。
+階重量パネルを選択します。対象とする階重量パネルは自動指定と直接指定が選択できます。
+[自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ制振装置を配置します。
+特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。
+マルチタワーモデルでは直接指定が必須です。
+制震装置データベースで設定した部材の符号を選択し、基数、角度を設定することで部材を配置していきます。階名は自動で入力されます。
+上部のボタンで行の追加、削除、挿入を行うことができます。</p>
+<p><a href="#R-image-d37f13a3ae2f676ecefa7c0fb3b55aa7" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image92.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d37f13a3ae2f676ecefa7c0fb3b55aa7"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image92.png"></a></p>
+<h2 id="任意層間配置">任意層間配置</h2>
+<p>任意の層間に制震部材を配置できます。
+制震装置データベースで設定した部材の符号を選択し、階パネルと層、基数、角度を設定することで部材を配置していきます。
+上部のボタンで行の追加、削除、挿入を行うことができます。</p>
+<p><a href="#R-image-9eae9e9781aa7cd1c2aa892e428ff274" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image93.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9eae9e9781aa7cd1c2aa892e428ff274"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image93.png"></a></p>
+<h2 id="製品選択制振装置データベース">製品選択（制振装置データベース）</h2>
+<p>追加をクリックし、設置する制震部材を選択します。
+その後、左のオイルダンパー、鋼材系ダンパーのウィンドウで符号と各パラメータを設定します。
+行の追加・削除は右クリックまたは上部のボタンで行います。
+なお、制振装置のオイルダンパーは免震装置のばらつきの影響は反映されません。免震装置としてのオイルダンパーを入力する場合は免震装置パネルの「直接入力」より選択してください。</p>
+<p><a href="#R-image-231134842a8e438ea7b00b6062cf7b6b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image94.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-231134842a8e438ea7b00b6062cf7b6b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image94.png"></a></p>
+<p>＜ダンパーの角度＞
+ダンパーの角度について、右図のように、水平方向からの傾きを入力します。
+また、実際に計算に用いられる剛性としては、
+〖k=k〗_0×〖cos〗^2 θ
+となります。オイルダンパーではk_0を入力します。</p>
+<p><a href="#R-image-253ad6bb965cf1ef15c13005535f83f4" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image95.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-253ad6bb965cf1ef15c13005535f83f4"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image95.png"></a></p>
+<h2 id="製品説明">製品説明</h2>
+<p>各制振装置の説明と入力項目について説明します。以下の項目を選択し、「追加」をクリックすることでデータベースに追加しパラメータを入力することができます。</p>
+<p>状態NRT評価とは、下記文献に示される制振建物の振動モデルの分析方法で、履歴型/速度依存型ダンパーの設置位置・支持方法によって変化するダンパーの効果を把握し、モデルの妥当性を確認する手がかりが得られます。この評価によって算出されたばね値を用いることで、ダンパーの架構内における実効変形を精度よく評価することが可能になります。
+石井正人, 笠井和彦 「多層制振構造の時刻歴解析に用いるせん断棒モデルの提案」 日本建築学会構造系論文集 / 75 巻 (2010) 647 号</p>
+<p>・オイルダンパー</p>
+<p><a href="#R-image-782dcf78149749ccf85b3f5d723f4faf" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image96.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-782dcf78149749ccf85b3f5d723f4faf"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image96.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	直列ばねの剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	減衰係数を直接入力	0.0	－	－	N*sec/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">リリーフ荷重	リリーフ荷重を直接入力	リリーフ無し	－	－	N</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率	減衰係数低下率を直接入力	0.0	1未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・非対称オイルダンパー</p>
+<p><a href="#R-image-46a829844620636cf3b55efa4227a596" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image97.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46a829844620636cf3b55efa4227a596"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image97.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性（状態NRT評価時用）	倍率を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	剛性を直接入力	無限大	－	－	kN/m</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	初期減衰係数 C0を直接入力	0.0	－	－	kN*sec/m</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ1（正側）	正側の第1折点荷重を入力	リリーフ無し	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α1(正側)	正側の第2勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ２（正側）	正側の第2折点荷重を入力	バイリニア	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α２(正側)	正側の第3勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ1（負側）	負側の第1折点荷重を入力	リリーフ無し	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α1(負側)	負側の第2勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ２（負側）	負側の第2折点荷重を入力	バイリニア	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α２(負側)	負側の第3勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・べき乗ダンパー</p>
+<p><a href="#R-image-36404545d883fa171317488ef9a0542c" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image98.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-36404545d883fa171317488ef9a0542c"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image98.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	直列ばねの剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	減衰係数を直接入力	0.0	－	－	N*(sec/mm)^α</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">べき乗指数	べき乗指数を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・オイレス工業粘性制震壁</p>
+<p><a href="#R-image-a0a492ecf1f314ce1a70d4eaeaec19a9" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image99.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a0a492ecf1f314ce1a70d4eaeaec19a9"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image99.png"></a>
+<a href="#R-image-d07fb8a644b47536f55f21efef71568f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image100.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d07fb8a644b47536f55f21efef71568f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image100.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">剛性	剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断断面積	せん断断面積を直接入力	省略不可	－	－	mm2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断隙間	せん断隙間を直接入力	省略不可	－	－	mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">温度	温度を直接入力	20.0	－	－	℃</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・免制震ディバイス粘性制震</p>
+<p><a href="#R-image-2b0876823363b8d08b9a95939d07a5b8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image101.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b0876823363b8d08b9a95939d07a5b8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/05_damper/./image101.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">剛性	剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断断面積	せん断断面積を直接入力	省略不可	－	－	mm2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断隙間	せん断隙間を直接入力	省略不可	－	－	mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">縦横比	縦横比を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">温度	温度を直接入力	20.0	－	－	℃</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">固有周期	固有周期を直接入力	1次の固有周期※	－	－	秒</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※解析を行って求められた１次固有周期を用います。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1715127398" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1715127398" defer></script>
+    <script src="../../../js/theme.js?1715127398" defer></script>
+  </body>
+</html>

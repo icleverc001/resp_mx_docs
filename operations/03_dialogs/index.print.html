@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ダイアログ - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/03_dialogs/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="ダイアログ - RESP-MX マニュアル">
+    <meta property="og:description" content="共通設定階重量復元力特性任意ばね制振部材免震部材繰返し依存ばらつきマルチタワー解析条件解析ケース">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>ダイアログ - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/03_dialogs/index.html" rel="canonical" type="text/html" title="ダイアログ - RESP-MX マニュアル">
+    <link href="../../operations/03_dialogs/index.xml" rel="alternate" type="application/rss+xml" title="ダイアログ - RESP-MX マニュアル">
+    <link href="../../images/favicon.ico?1715127397" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css?1715127398" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css?1715127398" rel="stylesheet">
+    <link href="../../css/fonts.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css?1715127398" rel="stylesheet">
+    <link href="../../css/theme-auto.css?1715127398" rel="stylesheet" id="R-variant-style">
+    <link href="../../css/chroma-auto.css?1715127398" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../css/variant.css?1715127398" rel="stylesheet">
+    <link href="../../css/print.css?1715127398" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css?1715127398" rel="stylesheet">
+    <link href="../../css/ie.css?1715127398" rel="stylesheet">
+    <script src="../../js/url.js?1715127398"></script>
+    <script src="../../js/variant.js?1715127398"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../operations/03_dialogs/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ダイアログ</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/02_analysis_flow/11_animetion/index.html" title="アニメーションの表示 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../operations/03_dialogs/01_commonsettingn/index.html" title="共通設定 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="ダイアログ">ダイアログ</h1>
+
+
+<ul class="children children-li children-sort-weight">
+	
+<li><a href="../../operations/03_dialogs/01_commonsettingn/index.html">共通設定</a></li>
+<li><a href="../../operations/03_dialogs/02_story/index.html">階重量</a></li>
+<li><a href="../../operations/03_dialogs/03_frame/index.html">復元力特性</a></li>
+<li><a href="../../operations/03_dialogs/04_spring/index.html">任意ばね</a></li>
+<li><a href="../../operations/03_dialogs/05_damper/index.html">制振部材</a></li>
+<li><a href="../../operations/03_dialogs/06_isolator/index.html">免震部材</a></li>
+<li><a href="../../operations/03_dialogs/07_iterator/index.html">繰返し依存</a></li>
+<li><a href="../../operations/03_dialogs/08_scat/index.html">ばらつき</a></li>
+<li><a href="../../operations/03_dialogs/09_multitower/index.html">マルチタワー</a></li>
+<li><a href="../../operations/03_dialogs/10_analysis/index.html">解析条件</a></li>
+<li><a href="../../operations/03_dialogs/11_analysiscase/index.html">解析ケース</a></li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">ダイアログのサブセクション</h1>
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="共通設定">共通設定</h1>
+
+<p>重量・長さの単位系を指定します。単位系はパネルツリーの共通設定にて後から変更できます。</p>
+<p><a href="#R-image-3ce06ae9afbc217db1176fde8b109190" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/01_commonsettingn/./image77.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ce06ae9afbc217db1176fde8b109190"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/01_commonsettingn/./image77.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="階重量">階重量</h1>
+
+<h2 id="行の新規追加削除">行の新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。</p>
+<p><a href="#R-image-bd2c16352d8a88a31bbc39bbcfa06d7c" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/02_story/./image78.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bd2c16352d8a88a31bbc39bbcfa06d7c"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/02_story/./image78.png"></a></p>
+<h2 id="入力説明">入力説明</h2>
+<p>階名称、重量・階高を入力します。重量・階高の入力は「共通設定」で設定した単位系を用います。</p>
+<p><a href="#R-image-743315d13431da199ea417da76092276" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/02_story/./image79.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-743315d13431da199ea417da76092276"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/02_story/./image79.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="復元力特性">復元力特性</h1>
+
+<h2 id="基本設定入力説明">基本設定－入力説明</h2>
+<p>階重量パネルを選択します。対象とする階重量パネルは自動指定と直接指定が選択できます。
+[自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ復元力特性を配置します。
+特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。
+マルチタワーモデルでは直接指定が必須です。
+「せん断剛性・EI入力（M-θ）」「せん断剛性・EI入力（M-φ）」「GA・EI入力（M-θ）」「せん断剛性・回転剛性入力」から入力方法を選択します。
+入力方法を変更する際剛性の値は変更されないので手動で変更する必要があります。</p>
+<p><a href="#R-image-038007a92ce08ff271eb814b3e760342" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image80.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-038007a92ce08ff271eb814b3e760342"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image80.png"></a></p>
+<h2 id="せん断性能行新規追加削除">せん断性能－行新規・追加・削除</h2>
+<p>基本設定タブ以外を右クリックでメニューが表示されます。</p>
+<p><a href="#R-image-3f13259bf62902463d917feecab096e5" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image81.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f13259bf62902463d917feecab096e5"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image81.png"></a></p>
+<h2 id="せん断性能入力説明">せん断性能－入力説明</h2>
+<p>せん断剛性、減衰を入力して復元力タイプを選択し、降伏荷重、剛性低下率を入力します。
+せん断剛性を空白のままにした場合は剛性0の階として認識されます。
+降伏荷重、剛性低下率において復元力タイプで「弾性」を選択した場合は入力不可です。
+減衰指定固有周期・減衰定数を空白にしたままの場合は、それぞれマルチタワーパネル、解析条件パネルの順で設定に従います。</p>
+<p><a href="#R-image-39a8eca1dba3a711b81c191d478cbcd8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image82.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39a8eca1dba3a711b81c191d478cbcd8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image82.png"></a></p>
+<h2 id="せん断性能注意点">せん断性能－注意点</h2>
+<p>「基本設定」にて入力方法を変更しても入力した値は自動変換されないので手動入力をしてください。</p>
+<p><a href="#R-image-46dc3222f7d945ce9f2139e3f0845fce" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image83.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46dc3222f7d945ce9f2139e3f0845fce"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image83.png"></a></p>
+<h2 id="せん断特殊性能入力説明">せん断特殊性能－入力説明</h2>
+<p>選択したセルの階に設定した復元力タイプのパラメータ説明が表示されます。これに従ってP1~P6に入力します。</p>
+<p><a href="#R-image-a4d6353c1fb938f443c3d870d20e1b2b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image84.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a4d6353c1fb938f443c3d870d20e1b2b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image84.png"></a></p>
+<h2 id="曲げ性能入力説明">曲げ性能－入力説明</h2>
+<p>曲げ剛性を入力し復元力タイプを選択し、降伏曲げ荷重、剛性低下率を入力します。
+また、曲げ剛性を空白にした場合は無限大の剛性として設定されます。
+降伏曲げ荷重、剛性低下率において復元力タイプで「弾性」を選択した場合は入力不可です。</p>
+<p><a href="#R-image-8ecc455cea261175e533589ba484a0d0" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image85.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8ecc455cea261175e533589ba484a0d0"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image85.png"></a></p>
+<h2 id="曲げ性能注意点">曲げ性能－注意点</h2>
+<p>「基本設定」にて入力方法を変更しても入力した値は自動変換されないので手動入力をしてください。</p>
+<p><a href="#R-image-e6228fee07f0b569d743170d33de5dcb" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image86.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6228fee07f0b569d743170d33de5dcb"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image86.png"></a></p>
+<h2 id="曲げ特殊性能入力説明">曲げ特殊性能－入力説明</h2>
+<p>選択したセルの階に設定した復元力タイプのパラメータ説明が表示されます。これに従ってP1~P6に入力します。</p>
+<p><a href="#R-image-7eea613ad09d0ff7178d79b55d3dbe69" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image87.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7eea613ad09d0ff7178d79b55d3dbe69"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/03_frame/./image87.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="任意ばね">任意ばね</h1>
+
+<h2 id="ばね設定行新規追加削除">ばね設定－行新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。
+上部ボタンをクリックしても追加・削除ができます。</p>
+<p><a href="#R-image-61718ce8c91c9ddf5e682fb65ac6821d" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image88.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-61718ce8c91c9ddf5e682fb65ac6821d"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image88.png"></a></p>
+<h2 id="ばね設定入力説明">ばね設定－入力説明</h2>
+<p>作成した階重量パネルの中から配置するパネル、配置する層を選択します。
+対象とする階重量パネルは自動指定と直接指定が選択できます。
+[自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ任意ばねを配置します。
+特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。
+マルチタワーモデルでは直接指定が必須です。
+ばね値を入力したら復元力タイプを設定します。</p>
+<p><a href="#R-image-8ca1ee00528c0ecd027fea64acb5ac75" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image89.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8ca1ee00528c0ecd027fea64acb5ac75"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image89.png"></a></p>
+<h2 id="非線形特性入力説明">非線形特性－入力説明</h2>
+<p>復元力タイプを選択し、降伏荷重、剛性低下率を入力します。
+降伏曲げ荷重、剛性低下率において復元力タイプで「弾性」を選択した場合は入力不可です。</p>
+<p><a href="#R-image-3ae14c75b1a4bbc1697d196815d2a339" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image90.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ae14c75b1a4bbc1697d196815d2a339"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image90.png"></a></p>
+<h2 id="非線形特殊性能入力説明">非線形特殊性能－入力説明</h2>
+<p>設定したセルの復元力タイプのパラメータ説明が表示されます。これに従ってP1~P6に入力します。</p>
+<p><a href="#R-image-c3aa5c26f9118791773aeb7de7e5fd96" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image91.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c3aa5c26f9118791773aeb7de7e5fd96"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/04_spring/./image91.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="制振部材">制振部材</h1>
+
+<h2 id="各階配置">各階配置</h2>
+<p>各階に制震部材を配置できます。
+階重量パネルを選択します。対象とする階重量パネルは自動指定と直接指定が選択できます。
+[自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ制振装置を配置します。
+特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。
+マルチタワーモデルでは直接指定が必須です。
+制震装置データベースで設定した部材の符号を選択し、基数、角度を設定することで部材を配置していきます。階名は自動で入力されます。
+上部のボタンで行の追加、削除、挿入を行うことができます。</p>
+<p><a href="#R-image-d37f13a3ae2f676ecefa7c0fb3b55aa7" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image92.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d37f13a3ae2f676ecefa7c0fb3b55aa7"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image92.png"></a></p>
+<h2 id="任意層間配置">任意層間配置</h2>
+<p>任意の層間に制震部材を配置できます。
+制震装置データベースで設定した部材の符号を選択し、階パネルと層、基数、角度を設定することで部材を配置していきます。
+上部のボタンで行の追加、削除、挿入を行うことができます。</p>
+<p><a href="#R-image-9eae9e9781aa7cd1c2aa892e428ff274" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image93.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9eae9e9781aa7cd1c2aa892e428ff274"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image93.png"></a></p>
+<h2 id="製品選択制振装置データベース">製品選択（制振装置データベース）</h2>
+<p>追加をクリックし、設置する制震部材を選択します。
+その後、左のオイルダンパー、鋼材系ダンパーのウィンドウで符号と各パラメータを設定します。
+行の追加・削除は右クリックまたは上部のボタンで行います。
+なお、制振装置のオイルダンパーは免震装置のばらつきの影響は反映されません。免震装置としてのオイルダンパーを入力する場合は免震装置パネルの「直接入力」より選択してください。</p>
+<p><a href="#R-image-231134842a8e438ea7b00b6062cf7b6b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image94.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-231134842a8e438ea7b00b6062cf7b6b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image94.png"></a></p>
+<p>＜ダンパーの角度＞
+ダンパーの角度について、右図のように、水平方向からの傾きを入力します。
+また、実際に計算に用いられる剛性としては、
+〖k=k〗_0×〖cos〗^2 θ
+となります。オイルダンパーではk_0を入力します。</p>
+<p><a href="#R-image-253ad6bb965cf1ef15c13005535f83f4" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image95.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-253ad6bb965cf1ef15c13005535f83f4"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image95.png"></a></p>
+<h2 id="製品説明">製品説明</h2>
+<p>各制振装置の説明と入力項目について説明します。以下の項目を選択し、「追加」をクリックすることでデータベースに追加しパラメータを入力することができます。</p>
+<p>状態NRT評価とは、下記文献に示される制振建物の振動モデルの分析方法で、履歴型/速度依存型ダンパーの設置位置・支持方法によって変化するダンパーの効果を把握し、モデルの妥当性を確認する手がかりが得られます。この評価によって算出されたばね値を用いることで、ダンパーの架構内における実効変形を精度よく評価することが可能になります。
+石井正人, 笠井和彦 「多層制振構造の時刻歴解析に用いるせん断棒モデルの提案」 日本建築学会構造系論文集 / 75 巻 (2010) 647 号</p>
+<p>・オイルダンパー</p>
+<p><a href="#R-image-782dcf78149749ccf85b3f5d723f4faf" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image96.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-782dcf78149749ccf85b3f5d723f4faf"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image96.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	直列ばねの剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	減衰係数を直接入力	0.0	－	－	N*sec/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">リリーフ荷重	リリーフ荷重を直接入力	リリーフ無し	－	－	N</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率	減衰係数低下率を直接入力	0.0	1未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・非対称オイルダンパー</p>
+<p><a href="#R-image-46a829844620636cf3b55efa4227a596" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image97.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-46a829844620636cf3b55efa4227a596"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image97.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性（状態NRT評価時用）	倍率を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	剛性を直接入力	無限大	－	－	kN/m</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	初期減衰係数 C0を直接入力	0.0	－	－	kN*sec/m</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ1（正側）	正側の第1折点荷重を入力	リリーフ無し	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α1(正側)	正側の第2勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ２（正側）	正側の第2折点荷重を入力	バイリニア	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α２(正側)	正側の第3勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ1（負側）	負側の第1折点荷重を入力	リリーフ無し	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α1(負側)	負側の第2勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Ｑ２（負側）	負側の第2折点荷重を入力	バイリニア	－	－	kN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数低下率α２(負側)	負側の第3勾配の初期減衰係数に対する倍率を入力	0.0	１未満	0.0	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・べき乗ダンパー</p>
+<p><a href="#R-image-36404545d883fa171317488ef9a0542c" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image98.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-36404545d883fa171317488ef9a0542c"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image98.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号名を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">直列ばねの剛性	直列ばねの剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">減衰係数	減衰係数を直接入力	0.0	－	－	N*(sec/mm)^α</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">べき乗指数	べき乗指数を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・オイレス工業粘性制震壁</p>
+<p><a href="#R-image-a0a492ecf1f314ce1a70d4eaeaec19a9" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image99.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a0a492ecf1f314ce1a70d4eaeaec19a9"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image99.png"></a>
+<a href="#R-image-d07fb8a644b47536f55f21efef71568f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image100.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d07fb8a644b47536f55f21efef71568f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image100.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">剛性	剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断断面積	せん断断面積を直接入力	省略不可	－	－	mm2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断隙間	せん断隙間を直接入力	省略不可	－	－	mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">温度	温度を直接入力	20.0	－	－	℃</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※単位は共通設定で設定された単位に依存します</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>・免制震ディバイス粘性制震</p>
+<p><a href="#R-image-2b0876823363b8d08b9a95939d07a5b8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image101.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b0876823363b8d08b9a95939d07a5b8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/05_damper/./image101.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">省略値</th>
+<th style="text-align:left">上限</th>
+<th style="text-align:left">下限</th>
+<th style="text-align:left">単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号	符号を直接入力	省略不可	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">支持剛性</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">（状態NRT評価時用）	支持剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">剛性	剛性を直接入力	無限大	－	－	N/mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断断面積	せん断断面積を直接入力	省略不可	－	－	mm2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">せん断隙間	せん断隙間を直接入力	省略不可	－	－	mm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">縦横比	縦横比を直接入力	1.0	－	－	－</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">温度	温度を直接入力	20.0	－	－	℃</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">固有周期	固有周期を直接入力	1次の固有周期※	－	－	秒</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">※解析を行って求められた１次固有周期を用います。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="免震部材">免震部材</h1>
+
+<h2 id="画面の説明">画面の説明</h2>
+<p>プロジェクト内で共通の符号定義を用いて、パネルごとに異なる部材配置を設定できます。</p>
+<p><a href="#R-image-47849f32e619e99668d3e5beb7bb5ea8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image109.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-47849f32e619e99668d3e5beb7bb5ea8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image109.png"></a></p>
+<h2 id="製品選択行新規追加削除">製品選択－行新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。
+上部ボタンをクリックしても追加・削除・挿入ができます。</p>
+<p><a href="#R-image-e79bed446414fed3dd4e55f8f41b1b98" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image110.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e79bed446414fed3dd4e55f8f41b1b98"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image110.png"></a></p>
+<h2 id="製品選択入力説明">製品選択－入力説明</h2>
+<p>符号を入力します。そして名前の入力が可能です。支承材／減衰材、装置タイプ、メーカー名、シリーズ名、装置名の順に製品を選択します。</p>
+<p><a href="#R-image-3a458b8ac2451bf106a5fc94fa849a74" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image111.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a458b8ac2451bf106a5fc94fa849a74"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image111.png"></a></p>
+<h2 id="直接入力入力説明注意点">直接入力－入力説明－注意点</h2>
+<p>装置タイプによってP1~P8まで、パラメータの入力位置が変わるので注意が必要です。</p>
+<p><a href="#R-image-35e74d9f464102e087c47334d58ce5d8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image112.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35e74d9f464102e087c47334d58ce5d8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image112.png"></a></p>
+<h2 id="免震層指定">免震層指定</h2>
+<p>免震層の位置を指定します。対象とする階重量パネルは自動指定と直接指定が選択できます。
+[自動]を選択すると自動指定となり、計算セット毎に設定された階重量パネルへ免震装置を配置します。
+特定の階重量パネルを選択すると、その他の階重量パネルでは使用不可となります。
+複数層免震モデルやマルチタワーモデルでは直接指定が必須です。</p>
+<p>免震層は最下層を0とする層番号で指定します。免震層指定画面を用いることで定義済みの階重量パネルの情報を閲覧しながら選択することができます。
+初期設定では免震層は隣合う層間となりますが、「任意層間で配置」をチェックすることで、任意層間での配置ができます。ただし任意層間配置では曲げが伝達されません。
+免震層指定後に階重量パネルで階の追加や削除を行った場合は、再度免震層を手動で設定する必要があります。</p>
+<p><a href="#R-image-05337caf425654e56afbc8d7afcdea2b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image113.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-05337caf425654e56afbc8d7afcdea2b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image113.png"></a></p>
+<h2 id="装置配置">装置配置</h2>
+<p>配置する部材を上部で定義した符号の中から選択し設置する基数を入力します。
+また支承材の場合のみ軸力を入力します。</p>
+<p><a href="#R-image-45b5fd09eaed8f6acc8605a5b7983c09" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image114.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-45b5fd09eaed8f6acc8605a5b7983c09"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/06_isolator/./image114.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="繰返し依存">繰返し依存</h1>
+
+<h2 id="画面の説明">画面の説明</h2>
+<p>プロジェクト内で共通の符号定義を用いて、パネルごとに異なる部材設定ができます。</p>
+<p>「繰返し依存係数設定」では免震定義毎に繰返し依存係数を「自動計算」か「直接入力」を設定できます。（自動計算に対応していない免震部材あり）
+「自動計算のための条件」は免震装置タイプ別に自動計算に必要なパラメータを設定します。</p>
+<p><a href="#R-image-1adfa65a4649357698a7e0ef15dd8cbb" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image115.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1adfa65a4649357698a7e0ef15dd8cbb"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image115.png"></a></p>
+<h2 id="計算結果の表示">計算結果の表示</h2>
+<p>メイン画面の繰返し依存性パネルのアイコンをクリックすることにより、セットごとに繰返し依存性の結果まとめを表示できます。</p>
+<p><a href="#R-image-7c9bde5d7ff25dca0968550aa92413be" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image116.emf" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c9bde5d7ff25dca0968550aa92413be"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image116.emf"></a></p>
+<p>繰返し依存性の結果まとめ画面では、免震定義毎の入力データと累積エネルギーが一覧で表示されます。</p>
+<p><a href="#R-image-0246bba3ca5e28d953beb9d8b6acfdca" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image117.emf" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0246bba3ca5e28d953beb9d8b6acfdca"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image117.emf"></a></p>
+<p>また、結果一覧の詳細ボタンをクリックすると、各部材の計算結果詳細が表示されます。</p>
+<p><a href="#R-image-adb249b9830a96c2abe78fcb8d620972" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image118.emf" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-adb249b9830a96c2abe78fcb8d620972"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/07_iterator/./image118.emf"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="ばらつき">ばらつき</h1>
+
+<p>ばらつきパネルでは「免震部材」「制振部材」のばらつきをそれぞれ設定できます。
+装置タイプごとにばらつきが入力可能な「装置タイプ」、各符号においてばらつきが入力可能な「符号」の二項目があります。</p>
+<h2 id="装置タイプ入力説明">「装置タイプ」－入力説明</h2>
+<p>右上の「符号リスト」をクリックすると定義済み符号リストが表示されるので「免震部材」「制振部材」で定義したそれぞれの装置のタイプを確認しながら入力することができます。
+「装置タイプ」のセルを選択するとパラメータP1～P5の説明が表示されます。</p>
+<p><a href="#R-image-1ea4b09e267650246ca767d36fe1399f" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image119.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1ea4b09e267650246ca767d36fe1399f"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image119.png"></a></p>
+<p> </p>
+<h2 id="符号行新規追加削除">「符号」－行新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。
+上部ボタンをクリックしても追加・削除・挿入ができます。</p>
+<p><a href="#R-image-565cef7e8f778519391c46712884fc62" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image120.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-565cef7e8f778519391c46712884fc62"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image120.png"></a></p>
+<h2 id="符号入力説明">「符号」－入力説明</h2>
+<p>符号ごとにばらつきが設定可能です。＋には正の値を、－には負の値を入力します。
+このとき装置タイプで入力したばらつきではなく符号ごとに設定したばらつきが使用されます。</p>
+<p><a href="#R-image-39009d1474c32253b3a68e121f4fa244" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image121.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39009d1474c32253b3a68e121f4fa244"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/08_scat/./image121.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="マルチタワー">マルチタワー</h1>
+
+<p>マルチタワーモデル時に設定します。階重量パネルを１つの計算セットに複数配置する場合には、必ずマルチタワーパネルの配置が必要になります。</p>
+<h2 id="タワー接続設定入力説明">タワー接続設定－入力説明</h2>
+<p>複数のタワーを中間層で接続するモデルで設定します。「メイン階重量パネル」では、基礎に接続しているメインタワーの階重量パネルを選択します。「サブ階パネル」ではメインタワーに接続するサブタワーの階重量パネルを選択します。「接続層」では、サブタワーが接続するメインタワーの層を指定します。
+なお、独立した複数タワーを作成する場合はタワー接続設定の必要はありません。</p>
+<h2 id="タワーの減衰指定入力説明">タワーの減衰指定－入力説明</h2>
+<p>タワー毎に個別の固有周期と減衰を指定できます。
+固有周期が空白の場合は解析条件パネルの減衰指定固有周期T1が採用されます。
+減衰が空白の場合は解析条件パネルの減衰定数h1が採用されます。0を入力すると減衰0%になります
+固有周期・減衰のそれぞれの採用優先順位は　1.復元力パネル2.マルチタワーパネル3.解析条件パネル　で設定されます。</p>
+<p><a href="#R-image-92be25c8740cafdbca8144dfb808abae" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/09_multitower/./image122.emf" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-92be25c8740cafdbca8144dfb808abae"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/09_multitower/./image122.emf"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="解析条件">解析条件</h1>
+
+<h2 id="条件入力説明">条件－入力説明</h2>
+<p>解析方法のβの値と固有値解析の出力モード次数を入力し、偏心率、固有周期計算用免震層想定変形、弾性・弾塑性解析の指定、免震層の考慮を選択します。</p>
+<p><a href="#R-image-646678dbba10be2a58505b96b6f4bfd3" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image123.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-646678dbba10be2a58505b96b6f4bfd3"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image123.png"></a></p>
+<p>次に減衰手法を選択します。</p>
+<p><a href="#R-image-072a2e55ae00af13fd2c7d813a378f8e" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image124.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-072a2e55ae00af13fd2c7d813a378f8e"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image124.png"></a></p>
+<p>「剛性比例型減衰」を選択した場合、減衰固有周期と減衰定数を入力、瞬間剛性比例減衰タイプを選択します。なお、減衰固有周期を0に設定した場合、固有値解析の結果の１次周期を解析に用います。</p>
+<p><a href="#R-image-6e6054a30d259041ded55b0b449d5ec2" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image125.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6e6054a30d259041ded55b0b449d5ec2"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image125.png"></a></p>
+<p>「レーリー型減衰」を選択した場合、周期／減衰定数のみ入力し減衰パラメータは自動計算を行います。
+下の右図のように減衰パラメータを直接入力することもできます。</p>
+<p><a href="#R-image-f8185655ab7848a4c9eae1132a7319d0" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image126.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f8185655ab7848a4c9eae1132a7319d0"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image126.png"></a></p>
+<h2 id="スウェイロッキング">スウェイ・ロッキング</h2>
+<p>スウェイ・ロッキングに関する設定を行うことができます。
+設置詳細において、各パラメータを設定することができます。減衰が空欄になっている場合は０としてみなされます。</p>
+<p><a href="#R-image-1c42eed77b5448a672b1f4d6333804c1" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image127.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1c42eed77b5448a672b1f4d6333804c1"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/10_analysis/./image127.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="解析ケース">解析ケース</h1>
+
+<h2 id="行新規追加削除">行新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。上部ボタンをクリックしても追加・削除・挿入ができます。
+右上の「波形データベース」をクリックします。</p>
+<p><a href="#R-image-88ae7f54f179ee0e0cb7f86bbe11226b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image128.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-88ae7f54f179ee0e0cb7f86bbe11226b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image128.png"></a></p>
+<p>◯波形データベース
+波形データベースを指定します。このとき右上のメニューから標準波形等の設定が可能です。
+また選択すると下に加速度波形が表示されます。図示したい項目を指定することで加速度応答スペクトル等も表示可能です。
+波形ファイルは共通設定パネルで設定された単位系として読み込まれます。単位系が異なる場合は「倍率」で調整を行ってください。
+「テーパー時間」では、波形データの開始部分をフェードインさせる時間を設定します。</p>
+<p><a href="#R-image-f75dd6436d25dfa71f222eba7851aa6b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image129.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f75dd6436d25dfa71f222eba7851aa6b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image129.png"></a></p>
+<h2 id="入力説明">入力説明</h2>
+<p>解析ケース名を入力し波形データベースで定義した波形から選択します。</p>
+<p><a href="#R-image-a02e702d21a56bea31f1da048e48b2d1" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image130.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a02e702d21a56bea31f1da048e48b2d1"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image130.png"></a></p>
+<h2 id="波形データベース標準波形以外を使用したい場合">波形データベース－標準波形以外を使用したい場合</h2>
+<p>「詳細」をクリックするとデータ読み込み詳細設定のウィンドウが表示されます。ファイル形式を選択しファイルを読み込み、データ刻みを入力します。
+データ点数入力方法を選択し、値を入力します。
+読み取り設定の振幅列を入力します。</p>
+<p><a href="#R-image-4108382cb16740c8be1b97793c25858a" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image131.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4108382cb16740c8be1b97793c25858a"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image131.png"></a></p>
+<p>〇履歴出力設定
+出力する履歴に関する設定を行います。
+出力したい履歴、層履歴、また、アニメ出力の出力時間間隔などを設定することができます。
+設定した履歴は階、パネルの種類に限らず全て出力します。</p>
+<p><a href="#R-image-425b4daf1818da5ceac7739257c6dc5b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image132.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-425b4daf1818da5ceac7739257c6dc5b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image132.png"></a></p>
+<h2 id="加振力で実行する">加振力で実行する</h2>
+<p>解析ケース名を入力し、[加振力で実行]を波形から選択します。
+加振力タブの「設定」をクリックすることで、加振力の入力設定をすることができます。</p>
+<p><a href="#R-image-10b5d57ab82b936065f2ce8db241158d" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image133.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10b5d57ab82b936065f2ce8db241158d"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image133.png"></a></p>
+<h2 id="加振力データベース">加振力データベース</h2>
+<p>加振力データベースを指定します。波形ファイルを指定します。
+波形ファイルの詳細等は、波形データベースと同じように確認することができます。</p>
+<p><a href="#R-image-56af5c28cdb99cd681c47c738e9e40fc" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image134.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56af5c28cdb99cd681c47c738e9e40fc"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image134.png"></a></p>
+<h2 id="加振力の設定">加振力の設定</h2>
+<p>どの層にどの波形の加振力を入力するかを設定できます。
+加振力データベースで設定した波形を選択し、どの層に入力するかを、「[階パネル]：[層名称]」タブから設定します。
+右クリックでメニューが表示されます。
+上部ボタンをクリックしても追加・削除ができます。</p>
+<p><a href="#R-image-c37cc46abadd863ce7e6c83f84e52007" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image135.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c37cc46abadd863ce7e6c83f84e52007"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../operations/03_dialogs/11_analysiscase/./image135.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js?1715127398" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js?1715127398" defer></script>
+    <script src="../../js/theme.js?1715127398" defer></script>
+  </body>
+</html>

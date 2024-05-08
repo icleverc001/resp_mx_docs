@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="アニメーションの表示 - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/02_analysis_flow/11_animetion/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="アニメーションの表示 - RESP-MX マニュアル">
+    <meta property="og:description" content="メイン画面「アニメ表示」ボタンから、選択した計算セットのアニメーション画面を表示することができます。
+また計算実行画面からも選択した計算セットのアニメーション画面を表示することができます。
+表示ケース選択 表示する計算ケース、ばらつきを選択 再生速度 再生速度倍率の指定 0.25倍、0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍 変位倍率	質点移動幅の倍率の指定 0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍 描画設定	質点サイズ、線幅を数値で指定 自動計算ボタンで画面サイズ、モデル形状に応じたサイズが自動で設定 地動変位の有無	地面の揺れを加えて絶対変位系で表現する機能 「地動変位を含む」場合、相対系の振動解析に地動変位（トリファナック法にて地動加速度を積分して求める）を加えることにより、地面が動く⾃然な動画を作成 画面サイズ	アニメーション表示画面のサイズを「VGA 640480」、「XGA 1024768」、「HDTV 1280*720」から選択 数値での直接指定も可 出力先	動画ファイルの出力先 出力先は解析結果が格納されているフォルダで固定 フォルダを開く	「出力先」のフォルダを開く 動画出力	「出力先」へ動画ファイル(.mp4)を出力 各種設定が反映された動画を作成 再生 出力済みの動画ファイルを再生 アニメーションはタワー毎に串団子で表示されます。免震階は紫色の直線で描かれます。タワー間をつなぐ任意ばねは青色の折れ線で描かれます。各質点の変形はロッキング変形も含んだ値で表示されています。下段は地震波が表示されます。 アニメーションは左下の「再生/一時停止」ボタン、「停止」ボタン、「リピート」ボタンで操作できます。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>アニメーションの表示 - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/02_analysis_flow/11_animetion/index.html" rel="canonical" type="text/html" title="アニメーションの表示 - RESP-MX マニュアル">
+    <link href="../../../operations/02_analysis_flow/11_animetion/index.xml" rel="alternate" type="application/rss+xml" title="アニメーションの表示 - RESP-MX マニュアル">
+    <link href="../../../images/favicon.ico?1715127397" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1715127398" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1715127398" rel="stylesheet">
+    <link href="../../../css/fonts.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1715127398" rel="stylesheet">
+    <link href="../../../css/theme-auto.css?1715127398" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-auto.css?1715127398" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/variant.css?1715127398" rel="stylesheet">
+    <link href="../../../css/print.css?1715127398" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1715127398" rel="stylesheet">
+    <link href="../../../css/ie.css?1715127398" rel="stylesheet">
+    <script src="../../../js/url.js?1715127398"></script>
+    <script src="../../../js/variant.js?1715127398"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../operations/02_analysis_flow/11_animetion/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/02_analysis_flow/index.html"><span itemprop="name">解析実行の流れ</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">アニメーションの表示</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/02_analysis_flow/10_figure/index.html" title="モデル図の表示 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/03_dialogs/index.html" title="ダイアログ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="アニメーションの表示">アニメーションの表示</h1>
+
+<p>メイン画面「アニメ表示」ボタンから、選択した計算セットのアニメーション画面を表示することができます。</p>
+<p><a href="#R-image-7e3eb89c30be4f338a6029f96c29b4da" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image73.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7e3eb89c30be4f338a6029f96c29b4da"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image73.png"></a></p>
+<p>また計算実行画面からも選択した計算セットのアニメーション画面を表示することができます。</p>
+<p><a href="#R-image-e6c89fea05e035d8df37b54f4cdface8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image74.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6c89fea05e035d8df37b54f4cdface8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image74.png"></a></p>
+<p><a href="#R-image-2b5661e376b0f4fa9c3a7301a97560f8" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image75.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b5661e376b0f4fa9c3a7301a97560f8"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image75.png"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表示ケース選択</th>
+<th style="text-align:left">表示する計算ケース、ばらつきを選択</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">再生速度</td>
+<td style="text-align:left">再生速度倍率の指定 0.25倍、0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍</td>
+</tr>
+<tr>
+<td style="text-align:left">変位倍率	質点移動幅の倍率の指定</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">0.5倍、1倍、1.5倍、2倍、4倍、8倍、16倍、32倍</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">描画設定	質点サイズ、線幅を数値で指定</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">自動計算ボタンで画面サイズ、モデル形状に応じたサイズが自動で設定</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">地動変位の有無	地面の揺れを加えて絶対変位系で表現する機能</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">「地動変位を含む」場合、相対系の振動解析に地動変位（トリファナック法にて地動加速度を積分して求める）を加えることにより、地面が動く⾃然な動画を作成</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">画面サイズ	アニメーション表示画面のサイズを「VGA 640<em>480」、「XGA 1024</em>768」、「HDTV 1280*720」から選択</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">数値での直接指定も可</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">出力先	動画ファイルの出力先</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">出力先は解析結果が格納されているフォルダで固定</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">フォルダを開く	「出力先」のフォルダを開く</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">動画出力	「出力先」へ動画ファイル(.mp4)を出力</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">各種設定が反映された動画を作成</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">再生</td>
+<td style="text-align:left">出力済みの動画ファイルを再生</td>
+</tr>
+</tbody>
+</table>
+<p>アニメーションはタワー毎に串団子で表示されます。免震階は紫色の直線で描かれます。タワー間をつなぐ任意ばねは青色の折れ線で描かれます。各質点の変形はロッキング変形も含んだ値で表示されています。下段は地震波が表示されます。
+アニメーションは左下の「再生/一時停止」ボタン、「停止」ボタン、「リピート」ボタンで操作できます。</p>
+<p><a href="#R-image-a7593e651b99d5987b37ef16d39b7d3a" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image76.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a7593e651b99d5987b37ef16d39b7d3a"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/02_analysis_flow/11_animetion/./image76.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1715127398" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1715127398" defer></script>
+    <script src="../../../js/theme.js?1715127398" defer></script>
+  </body>
+</html>

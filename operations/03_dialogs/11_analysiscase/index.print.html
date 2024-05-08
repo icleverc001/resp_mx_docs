@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head><script src="/resp-docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=resp-docs/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.27.0+tip">
+    <meta name="description" content="Documentation for Hugo Relearn Theme">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="解析ケース - RESP-MX マニュアル">
+    <meta name="twitter:description" content="Documentation for Hugo Relearn Theme">
+    <meta property="og:url" content="http://localhost:1313/resp-docs/operations/03_dialogs/11_analysiscase/index.html">
+    <meta property="og:site_name" content="RESP-MX マニュアル">
+    <meta property="og:title" content="解析ケース - RESP-MX マニュアル">
+    <meta property="og:description" content="行新規・追加・削除 右クリックでメニューが表示されます。上部ボタンをクリックしても追加・削除・挿入ができます。 右上の「波形データベース」をクリックします。
+◯波形データベース 波形データベースを指定します。このとき右上のメニューから標準波形等の設定が可能です。 また選択すると下に加速度波形が表示されます。図示したい項目を指定することで加速度応答スペクトル等も表示可能です。 波形ファイルは共通設定パネルで設定された単位系として読み込まれます。単位系が異なる場合は「倍率」で調整を行ってください。 「テーパー時間」では、波形データの開始部分をフェードインさせる時間を設定します。
+入力説明 解析ケース名を入力し波形データベースで定義した波形から選択します。
+波形データベース－標準波形以外を使用したい場合 「詳細」をクリックするとデータ読み込み詳細設定のウィンドウが表示されます。ファイル形式を選択しファイルを読み込み、データ刻みを入力します。 データ点数入力方法を選択し、値を入力します。 読み取り設定の振幅列を入力します。
+〇履歴出力設定 出力する履歴に関する設定を行います。 出力したい履歴、層履歴、また、アニメ出力の出力時間間隔などを設定することができます。 設定した履歴は階、パネルの種類に限らず全て出力します。
+加振力で実行する 解析ケース名を入力し、[加振力で実行]を波形から選択します。 加振力タブの「設定」をクリックすることで、加振力の入力設定をすることができます。
+加振力データベース 加振力データベースを指定します。波形ファイルを指定します。 波形ファイルの詳細等は、波形データベースと同じように確認することができます。
+加振力の設定 どの層にどの波形の加振力を入力するかを設定できます。 加振力データベースで設定した波形を選択し、どの層に入力するかを、「[階パネル]：[層名称]」タブから設定します。 右クリックでメニューが表示されます。 上部ボタンをクリックしても追加・削除ができます。">
+    <meta property="og:locale" content="ja">
+    <meta property="og:type" content="website">
+    <title>解析ケース - RESP-MX マニュアル</title>
+    <link href="http://localhost:1313/resp-docs/operations/03_dialogs/11_analysiscase/index.html" rel="canonical" type="text/html" title="解析ケース - RESP-MX マニュアル">
+    <link href="../../../operations/03_dialogs/11_analysiscase/index.xml" rel="alternate" type="application/rss+xml" title="解析ケース - RESP-MX マニュアル">
+    <link href="../../../images/favicon.ico?1715127397" rel="icon" type="image/x-icon" sizes="any">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css?1715127398" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css?1715127398" rel="stylesheet">
+    <link href="../../../css/fonts.css?1715127398" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css?1715127398" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css?1715127398" rel="stylesheet">
+    <link href="../../../css/theme-auto.css?1715127398" rel="stylesheet" id="R-variant-style">
+    <link href="../../../css/chroma-auto.css?1715127398" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="../../../css/variant.css?1715127398" rel="stylesheet">
+    <link href="../../../css/print.css?1715127398" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css?1715127398" rel="stylesheet">
+    <link href="../../../css/ie.css?1715127398" rel="stylesheet">
+    <script src="../../../js/url.js?1715127398"></script>
+    <script src="../../../js/variant.js?1715127398"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313\/resp-docs';
+      window.index_js_url="../../../index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+      // translations
+      window.T_Copy_to_clipboard = `クリップボードにコピー`;
+      window.T_Copied_to_clipboard = `クリップボードにコピー!`;
+      window.T_Copy_link_to_clipboard = `リンクをクリップボードにコピー`;
+      window.T_Link_copied_to_clipboard = `リンクをクリップボードにコピーしました!`;
+      window.T_Reset_view = `ビューのリセット`;
+      window.T_View_reset = `リセットを見る`;
+      window.T_No_results_found = `"{0}" の結果が見つかりません`;
+      window.T_N_results_found = `"{0}" で {1} 件の結果が見つかりました`;
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+      h2 {
+       	margin: 1em auto;
+	    padding:0.25em 0.5em 0.25em 0.5em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color: transparent; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+
+      h2 .type1 {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        font-weight: bold;
+        color: #6091d3; 
+        background: #FFF;
+        border: solid 3px #6091d3; 
+        border-radius: 10px; 
+      }
+      h2 .type2 {
+      	margin: 1em auto;
+	    padding:1em; 
+	    background-color: #e0f3f8; 
+      }
+      h2 .type3 {
+       	margin: 1em auto;
+	    padding:1em; 
+	    border-left:solid 5px  rgb(82, 230, 50); 
+	    background-color:#f5f5f5; 
+	    box-shadow:3px 1px 4px rgba(0, 0, 0, 0.2);    
+      }
+      
+      h2 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h2 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h3 {
+          border-bottom: 3px solid rgb(82, 230, 50);
+      }
+      
+      h3 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h3 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h4 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 24px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+      h5 {
+          border-bottom: 1px solid  rgb(82, 230, 50);
+          font-size: 20px;
+      }
+      
+      h4 span {
+          display: inline-block;
+          position: relative;
+          padding: 0 .4em .2em;
+          color: rgb(82, 230, 50);
+      }
+      
+      h4 span::before {
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: rgb(82, 230, 50);
+          content: '';
+      }
+
+    </style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../operations/03_dialogs/11_analysiscase/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="メニュー (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">RESP-MX操作・計算マニュアル</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/index.html"><span itemprop="name">操作編</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../operations/03_dialogs/index.html"><span itemprop="name">ダイアログ</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">解析ケース</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/03_dialogs/10_analysis/index.html" title="解析条件 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="../../../operations/04_create_model/index.html" title="モデル作成 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="解析ケース">解析ケース</h1>
+
+<h2 id="行新規追加削除">行新規・追加・削除</h2>
+<p>右クリックでメニューが表示されます。上部ボタンをクリックしても追加・削除・挿入ができます。
+右上の「波形データベース」をクリックします。</p>
+<p><a href="#R-image-88ae7f54f179ee0e0cb7f86bbe11226b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image128.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-88ae7f54f179ee0e0cb7f86bbe11226b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image128.png"></a></p>
+<p>◯波形データベース
+波形データベースを指定します。このとき右上のメニューから標準波形等の設定が可能です。
+また選択すると下に加速度波形が表示されます。図示したい項目を指定することで加速度応答スペクトル等も表示可能です。
+波形ファイルは共通設定パネルで設定された単位系として読み込まれます。単位系が異なる場合は「倍率」で調整を行ってください。
+「テーパー時間」では、波形データの開始部分をフェードインさせる時間を設定します。</p>
+<p><a href="#R-image-f75dd6436d25dfa71f222eba7851aa6b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image129.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f75dd6436d25dfa71f222eba7851aa6b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image129.png"></a></p>
+<h2 id="入力説明">入力説明</h2>
+<p>解析ケース名を入力し波形データベースで定義した波形から選択します。</p>
+<p><a href="#R-image-a02e702d21a56bea31f1da048e48b2d1" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image130.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a02e702d21a56bea31f1da048e48b2d1"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image130.png"></a></p>
+<h2 id="波形データベース標準波形以外を使用したい場合">波形データベース－標準波形以外を使用したい場合</h2>
+<p>「詳細」をクリックするとデータ読み込み詳細設定のウィンドウが表示されます。ファイル形式を選択しファイルを読み込み、データ刻みを入力します。
+データ点数入力方法を選択し、値を入力します。
+読み取り設定の振幅列を入力します。</p>
+<p><a href="#R-image-4108382cb16740c8be1b97793c25858a" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image131.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4108382cb16740c8be1b97793c25858a"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image131.png"></a></p>
+<p>〇履歴出力設定
+出力する履歴に関する設定を行います。
+出力したい履歴、層履歴、また、アニメ出力の出力時間間隔などを設定することができます。
+設定した履歴は階、パネルの種類に限らず全て出力します。</p>
+<p><a href="#R-image-425b4daf1818da5ceac7739257c6dc5b" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image132.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-425b4daf1818da5ceac7739257c6dc5b"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image132.png"></a></p>
+<h2 id="加振力で実行する">加振力で実行する</h2>
+<p>解析ケース名を入力し、[加振力で実行]を波形から選択します。
+加振力タブの「設定」をクリックすることで、加振力の入力設定をすることができます。</p>
+<p><a href="#R-image-10b5d57ab82b936065f2ce8db241158d" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image133.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10b5d57ab82b936065f2ce8db241158d"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image133.png"></a></p>
+<h2 id="加振力データベース">加振力データベース</h2>
+<p>加振力データベースを指定します。波形ファイルを指定します。
+波形ファイルの詳細等は、波形データベースと同じように確認することができます。</p>
+<p><a href="#R-image-56af5c28cdb99cd681c47c738e9e40fc" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image134.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56af5c28cdb99cd681c47c738e9e40fc"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image134.png"></a></p>
+<h2 id="加振力の設定">加振力の設定</h2>
+<p>どの層にどの波形の加振力を入力するかを設定できます。
+加振力データベースで設定した波形を選択し、どの層に入力するかを、「[階パネル]：[層名称]」タブから設定します。
+右クリックでメニューが表示されます。
+上部ボタンをクリックしても追加・削除ができます。</p>
+<p><a href="#R-image-c37cc46abadd863ce7e6c83f84e52007" class="lightbox-link"><img alt="画像4" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image135.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c37cc46abadd863ce7e6c83f84e52007"><img alt="画像4" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../../../operations/03_dialogs/11_analysiscase/./image135.png"></a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js?1715127398" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1715127398" defer></script>
+    <script src="../../../js/theme.js?1715127398" defer></script>
+  </body>
+</html>

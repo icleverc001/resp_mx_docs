@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>その他機能 on RESP-MX マニュアル</title>
+    <link>http://localhost:1313/resp-docs/operations/06_others/index.html</link>
+    <description>Recent content in その他機能 on RESP-MX マニュアル</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 17 Apr 2024 09:05:28 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/resp-docs/operations/06_others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>メイン画面の展開</title>
+      <link>http://localhost:1313/resp-docs/operations/06_others/01_expand/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 09:04:28 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/06_others/01_expand/index.html</guid>
+      <description>メイン画面展開ボタンで未配置パネルの表示・非表示を切り替えることができます。&#xA;デフォルトでは各計算セット間で差分表示になっていますが、登録パネルが増えすぎて冗長になる場合は展開ボタンを解除することで配置されたパネルのみの表示に切り替えることができます。</description>
+    </item>
+    <item>
+      <title>メイン画面のパン</title>
+      <link>http://localhost:1313/resp-docs/operations/06_others/02_pan/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 09:05:20 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/06_others/02_pan/index.html</guid>
+      <description>メイン画面上でマウスのホイールを押しながら動かすとパンが行えます。</description>
+    </item>
+    <item>
+      <title>メモ欄</title>
+      <link>http://localhost:1313/resp-docs/operations/06_others/03_memo/index.html</link>
+      <pubDate>Wed, 17 Apr 2024 09:05:28 +0900</pubDate>
+      <guid>http://localhost:1313/resp-docs/operations/06_others/03_memo/index.html</guid>
+      <description>メモを書きます。モデル化の条件や日付などを記入できます。</description>
+    </item>
+  </channel>
+</rss>
